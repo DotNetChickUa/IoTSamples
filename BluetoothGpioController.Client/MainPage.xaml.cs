@@ -29,8 +29,18 @@ public partial class MainPage : ContentPage
 				await adapter.ConnectToDeviceAsync(a.Device);
 				var service = await a.Device.GetServiceAsync(Guid.Parse("12345678-1234-5678-1234-56789abcdef0"));
 				var characteristic = await service.GetCharacteristicAsync(Guid.Parse("12345678-1234-5678-1234-56789abcdef1"));
+<<<<<<< HEAD:BluetoothGpioController.Client/MainPage.xaml.cs
 				await characteristic.WriteAsync(Encoding.Default.GetBytes("19;1"));
 				await characteristic.WriteAsync(Encoding.Default.GetBytes("19;0"));
+=======
+<<<<<<< HEAD
+				await characteristic.WriteAsync(Encoding.Default.GetBytes("19;OUTPUT;1"));
+				await characteristic.WriteAsync(Encoding.Default.GetBytes("19;OUTPUT;0"));
+=======
+				await characteristic.WriteAsync(Encoding.Default.GetBytes("10;OUTPUT;1;password"));
+				await characteristic.WriteAsync(Encoding.Default.GetBytes("10;INPUT;0;password"));
+>>>>>>> 9e2922b (Add Password)
+>>>>>>> 8b67ad0 (Add Password):BluetoothGpioController/BluetoothGpioController.Client/MainPage.xaml.cs
 			}
 			catch (Exception e)
 			{
