@@ -15,10 +15,14 @@
 	<ItemGroup>
 		<PackageReference Include="BluetoothLE.Server.Linux" Version="1.0.0" />
 <<<<<<< HEAD:BluetoothGpioController/BluetoothGpioController.csproj
+<<<<<<< HEAD:BluetoothGpioController/BluetoothGpioController.csproj
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.5" />
 =======
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.9" />
 >>>>>>> fbc592b (Refactor and enhance device management system):BluetoothGpioController/BluetoothGpioController/BluetoothGpioController.csproj
+=======
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.8" />
+>>>>>>> be8e5f2 (Home Management):BluetoothGpioController/BluetoothGpioController/BluetoothGpioController.csproj
 		<PackageReference Include="System.Device.Gpio" Version="4.0.1" />
 	</ItemGroup>
 </Project>

@@ -1,7 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
+<<<<<<< HEAD
 		<TargetFramework>net10.0</TargetFramework>
+=======
+		<TargetFramework>net9.0</TargetFramework>
+>>>>>>> be8e5f2 (Home Management)
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 
@@ -15,6 +19,7 @@
 		<PackageReference Include="LiveStreamingServerNet.AdminPanelUI" Version="0.31.1" />
 		<PackageReference Include="LiveStreamingServerNet.Flv" Version="0.31.1" />
 		<PackageReference Include="LiveStreamingServerNet.Standalone" Version="0.31.1" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 		<PackageReference Include="MudBlazor" Version="8.11.0" />
 		<PackageReference Include="System.Device.Gpio" Version="4.0.1" />
@@ -172,6 +177,9 @@
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 >>>>>>> fbc592b (Refactor and enhance device management system)
+=======
+		<PackageReference Include="MudBlazor" Version="8.11.0" />
+>>>>>>> be8e5f2 (Home Management)
 	</ItemGroup>
 
 </Project>

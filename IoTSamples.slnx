@@ -17,7 +17,6 @@
     <Project Path="IPCamera/IpCameraMaui/IpCameraMaui.csproj">
       <Deploy />
     </Project>
-    <Project Path="IPCamera/IpCameraWeb/IpCameraWeb.csproj" />
   </Folder>
 >>>>>>> 971c341 (Add IPCamera)
   <Folder Name="/Solution Items/">
@@ -25,6 +24,7 @@
     <File Path="global.json" />
     <File Path="README.md" />
   </Folder>
+<<<<<<< HEAD
 <<<<<<< HEAD
   <Project Path="BluetoothGpioController/BluetoothGpioController.Client/BluetoothGpioController.Client.csproj">
 >>>>>>> a4c4662 (Rework client)
@@ -41,4 +41,7 @@
 >>>>>>> c522be4 (Remove remote camera)
 =======
 >>>>>>> 971c341 (Add IPCamera)
+=======
+  <Project Path="HomeManagement/HomeManagement.csproj" Id="ec61e7d2-d096-4ac6-86b7-8a177c983bfa" />
+>>>>>>> be8e5f2 (Home Management)
 </Solution>

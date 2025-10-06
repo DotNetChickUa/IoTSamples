@@ -56,10 +56,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
+<<<<<<< HEAD:RemoteCamera/RemoteCamera.csproj
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.70" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.5" />
 		<PackageReference Include="CommunityToolkit.Maui" Version="11.2.0" />
 		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="2.0.3" />
+=======
+		<PackageReference Include="CommunityToolkit.Maui" Version="12.2.0" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.90" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.8" />
+		<PackageReference Include="Plugin.BLE" Version="3.1.0" />
+>>>>>>> be8e5f2 (Home Management):BluetoothGpioController/BluetoothGpioController.Client/BluetoothGpioController.Client.csproj
 	</ItemGroup>
 
 </Project>

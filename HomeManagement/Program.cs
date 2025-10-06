@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 using HomeManagement;
 using HomeManagement.Components;
+=======
+using HomeManagement.Components;
+using System.Net;
+>>>>>>> be8e5f2 (Home Management)
 using LiveStreamingServerNet;
 using LiveStreamingServerNet.AdminPanelUI;
 using LiveStreamingServerNet.Flv.Installer;
 using LiveStreamingServerNet.Standalone;
 using LiveStreamingServerNet.Standalone.Installer;
+<<<<<<< HEAD
 using LiveStreamingServerNet.StreamProcessor.AspNetCore.Installer;
 using LiveStreamingServerNet.StreamProcessor.Installer;
 using Microsoft.AspNetCore.Authentication;
@@ -396,3 +402,41 @@ await app.RunAsync();
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 >>>>>>> fbc592b (Refactor and enhance device management system)
+=======
+using MudBlazor.Services;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddMudServices();
+// Add services to the container.
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
+
+builder.Services.AddLiveStreamingServer(
+    new IPEndPoint(IPAddress.Any, 1935),
+    options => options.AddStandaloneServices().AddFlv()
+);
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error", createScopeForErrors: true);
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+
+app.UseAntiforgery();
+
+app.MapStaticAssets();
+app.UseHttpFlv();
+app.MapStandaloneServerApiEndPoints();
+app.UseAdminPanelUI(new AdminPanelUIOptions { BasePath = "/ip-cameras", HasHttpFlvPreview = true, HasHlsPreview = true });
+app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode();
+
+app.Run();
+>>>>>>> be8e5f2 (Home Management)

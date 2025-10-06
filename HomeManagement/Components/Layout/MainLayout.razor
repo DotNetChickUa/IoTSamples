@@ -1,5 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
+<<<<<<< HEAD
 <MudRTLProvider RightToLeft="_rightToLeft">
 	<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" />
 	<MudPopoverProvider />
@@ -8,16 +9,34 @@
 					   BackdropClick="false"
 					   Position="DialogPosition.Center" />
 	<MudSnackbarProvider />
+=======
+<MudRTLProvider RightToLeft="rightToLeft">
+	<MudThemeProvider @bind-IsDarkMode="@isDarkMode"/>
+	<MudPopoverProvider/>
+	<MudDialogProvider CloseButton="true"
+	                   CloseOnEscapeKey="true"
+	                   BackdropClick="false"
+	                   Position="DialogPosition.Center"/>
+	<MudSnackbarProvider/>
+>>>>>>> be8e5f2 (Home Management)
 
 	<MudLayout>
 		<MudAppBar Elevation="1">
 			<MudHidden Breakpoint="Breakpoint.SmAndDown">
 				<MudLink Href="/">
+<<<<<<< HEAD
 					<img src="favicon.png" alt="Home Management" class="mud-icon-root mud-icon-size-large" />
 				</MudLink>
 			</MudHidden>
 			<MudHidden Breakpoint="Breakpoint.MdAndUp">
 				<MudIconButton Icon="@Icons.Material.Outlined.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="DrawerToggle" />
+=======
+					<img src="favicon.png" alt="Home Management" class="mud-icon-root mud-icon-size-large"/>
+				</MudLink>
+			</MudHidden>
+			<MudHidden Breakpoint="Breakpoint.MdAndUp">
+				<MudIconButton Icon="@Icons.Material.Outlined.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="DrawerToggle"/>
+>>>>>>> be8e5f2 (Home Management)
 			</MudHidden>
 			<MudHidden Breakpoint="Breakpoint.Xs">
 				<MudLink Href="/" Typo="Typo.h6" Class="ml-4" Color="Color.Inherit">Home Management</MudLink>
@@ -25,6 +44,7 @@
 			<MudHidden Breakpoint="Breakpoint.Xs" Invert="true">
 				<MudLink Href="/" Typo="Typo.subtitle2" Color="Color.Inherit">Home Management</MudLink>
 			</MudHidden>
+<<<<<<< HEAD
 			<MudSpacer />
 			<MudToggleIconButton @bind-Toggled="_rightToLeft"
 								 Icon="@Icons.Material.Filled.FormatTextdirectionRToL"
@@ -64,6 +84,23 @@
 =======
 >>>>>>> 3548e6a (Get Status, Update to .NET 10)
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+			<MudSpacer/>
+			<MudToggleIconButton @bind-Toggled="rightToLeft"
+			                     Icon="@Icons.Material.Filled.FormatTextdirectionRToL"
+			                     ToggledIcon="@Icons.Material.Filled.FormatTextdirectionRToL"
+			                     Color="Color.Inherit"/>
+		</MudAppBar>
+
+		<MudDrawer @bind-Open="_drawerOpen" Elevation="1" ClipMode="DrawerClipMode.Always">
+			<NavMenu/>
+			<MudLink Href="https://www.buymeacoffee.com/vlad.antonyuk" Target="_blank">
+				<MudImage Src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png"
+				          Alt="Buy Me A Coffee"
+				          Fluid="true"
+				          Class="side-image"/>
+			</MudLink>
+>>>>>>> be8e5f2 (Home Management)
 		</MudDrawer>
 		<MudMainContent>
 			<MudContainer MaxWidth="MaxWidth.False">
@@ -78,7 +115,11 @@
 				</ErrorBoundary>
 			</MudContainer>
 			<MudScrollToTop Style="z-index: 1200">
+<<<<<<< HEAD
 				<MudFab StartIcon="@Icons.Material.Filled.ArrowUpward" Color="Color.Primary" />
+=======
+				<MudFab StartIcon="@Icons.Material.Filled.ArrowUpward" Color="Color.Primary"/>
+>>>>>>> be8e5f2 (Home Management)
 			</MudScrollToTop>
 		</MudMainContent>
 	</MudLayout>
@@ -86,9 +127,15 @@
 
 
 @code {
+<<<<<<< HEAD
 	private bool _drawerOpen = true;
 	private bool _isDarkMode = true;
 	private bool _rightToLeft;
+=======
+	bool _drawerOpen = true;
+	private bool isDarkMode = true;
+	private bool rightToLeft;
+>>>>>>> be8e5f2 (Home Management)
 
 
 	void DrawerToggle()
@@ -98,7 +145,13 @@
 }
 
 <div id="blazor-error-ui" data-nosnippet>
+<<<<<<< HEAD
 	An unhandled error has occurred.
 	<a href="." class="reload">Reload</a>
 	<span class="dismiss">🗙</span>
+=======
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+>>>>>>> be8e5f2 (Home Management)
 </div>
