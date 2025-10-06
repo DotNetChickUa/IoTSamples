@@ -11,6 +11,7 @@ namespace HomeManagement.Migrations
 {
     [DbContext(typeof(HomeManagementDbContext))]
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:HomeManagement/Migrations/20250913130714_Initial.Designer.cs
 =======
 <<<<<<< HEAD:HomeManagement/Migrations/20250914105204_Initial.Designer.cs
@@ -32,11 +33,14 @@ namespace HomeManagement.Migrations
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 0de0591 (Get Status, Update to .NET 10):HomeManagement/Migrations/20250913130714_Initial.Designer.cs
 >>>>>>> d4eca16 (Get Status, Update to .NET 10):HomeManagement/Migrations/20250914105204_Initial.Designer.cs
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 <<<<<<<< HEAD:HomeManagement/Migrations/20250913130714_Initial.Designer.cs
     [Migration("20250913130714_Initial")]
 ========
     [Migration("20251001124631_Initial")]
 >>>>>>>> 3548e6a (Get Status, Update to .NET 10):HomeManagement/Migrations/20251001124631_Initial.Designer.cs
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     [Migration("20250913130714_Initial")]
@@ -60,6 +64,11 @@ namespace HomeManagement.Migrations
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 0de0591 (Get Status, Update to .NET 10):HomeManagement/Migrations/20250913130714_Initial.Designer.cs
 >>>>>>> d4eca16 (Get Status, Update to .NET 10):HomeManagement/Migrations/20250914105204_Initial.Designer.cs
+=======
+=======
+    [Migration("20250913130714_Initial")]
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
     partial class Initial
     {
         /// <inheritdoc />
@@ -68,13 +77,19 @@ namespace HomeManagement.Migrations
 #pragma warning disable 612, 618
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
             modelBuilder.HasAnnotation("ProductVersion", "10.0.0-rc.1.25451.107");
 =======
             modelBuilder.HasAnnotation("ProductVersion", "9.0.9");
 >>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
             modelBuilder.HasAnnotation("ProductVersion", "10.0.0-rc.1.25451.107");
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 
             modelBuilder.Entity("HomeManagement.Device", b =>
                 {
@@ -114,8 +129,11 @@ namespace HomeManagement.Migrations
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
                             b1.Property<string>("CommandArgs")
                                 .HasColumnType("TEXT");
 
@@ -123,10 +141,15 @@ namespace HomeManagement.Migrations
                                 .HasColumnType("INTEGER");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
                             b1.Property<string>("DeviceName")
                                 .IsRequired()
                                 .HasColumnType("TEXT");

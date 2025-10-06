@@ -32,17 +32,23 @@ namespace HomeManagement.Migrations
                     Action = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
                     CommandType = table.Column<int>(type: "INTEGER", nullable: false),
                     Command = table.Column<string>(type: "TEXT", nullable: false),
                     CommandArgs = table.Column<string>(type: "TEXT", nullable: true),
 =======
                     Command = table.Column<string>(type: "TEXT", nullable: false),
 >>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
                     CommandType = table.Column<int>(type: "INTEGER", nullable: false),
                     Command = table.Column<string>(type: "TEXT", nullable: false),
                     CommandArgs = table.Column<string>(type: "TEXT", nullable: true),
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
                     DeviceName = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>

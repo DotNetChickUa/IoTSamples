@@ -3,17 +3,23 @@
 #include <ESP8266mDNS.h>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 #include <ArduinoJson.h>
 
 #pragma region Variables
 =======
 
 >>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 #include <ArduinoJson.h>
 
 #pragma region Variables
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 const char* name = "YOUR DEVICE NAME";
 const char* ssid = "YOUR SSID";
 const char* password = "YOUR_PASSWORD";
@@ -23,24 +29,33 @@ ESP8266WebServer server(80);
 struct PinMap {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
   int dNumber;  // e.g., 1 for D1
   int gpio;     // e.g., D1
 =======
     int dNumber;   // e.g., 1 for D1
     int gpio;      // e.g., D1
 >>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
   int dNumber;  // e.g., 1 for D1
   int gpio;     // e.g., D1
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 };
 
 struct Action {
   const char* action;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
   const char* commandType;
   const char* command;
   const char* commandArgs = "";
@@ -53,6 +68,9 @@ Action actions[] = {
   { "RESTART", "POST", "restart", "{}" },
   { "SHUTDOWN", "POST", "shutdown", "{}" }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
   const char* command;
 };
@@ -64,16 +82,22 @@ Action actions[] = {
   {"RESTART", "/restart"},
   {"SHUTDOWN", "/shutdown"}
 >>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 };
 
 // Only safe pins
 PinMap availablePins[] = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
   { 1, D1 },
   { 2, D2 },
   { 5, D5 },
@@ -201,6 +225,9 @@ void handleShutdown() {
 
 #pragma endregion Endpoints
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
     {1, D1},
     {2, D2},
@@ -211,8 +238,11 @@ void handleShutdown() {
 
 unsigned long bootMillis = 0;
 >>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 
 int pinFromString(String pinStr) {
   pinStr.trim();
@@ -224,8 +254,11 @@ int pinFromString(String pinStr) {
   // Look for requested D-number in array
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
   for (int i = 0; i < sizeof(availablePins) / sizeof(availablePins[0]); i++) {
     if (availablePins[i].dNumber == requestedD) {
       return availablePins[i].gpio;
@@ -245,6 +278,9 @@ void resetPins() {
 
 void connectToWifi() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
   for (int i = 0; i < sizeof(availablePins)/sizeof(availablePins[0]); i++) {
       if (availablePins[i].dNumber == requestedD) {
@@ -265,8 +301,11 @@ void resetPins(){
 
 void connectToWifi(){
 >>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
@@ -280,8 +319,11 @@ void connectToWifi(){
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 String buildInfoJson() {
   // uptime seconds
   unsigned long upSeconds = (millis() - bootMillis) / 1000UL;
@@ -306,6 +348,9 @@ String buildInfoJson() {
   serializeJson(doc, json);
   return json;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
 String buildActionsJson() {
   String json = "[";
@@ -394,6 +439,9 @@ void loop() {
   MDNS.update();
   server.handleClient();
 >>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 }

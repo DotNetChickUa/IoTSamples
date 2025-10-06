@@ -8,27 +8,40 @@ using System.Net.Sockets;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
 using System.Text.Json;
 using System.Text.Json.Serialization;
 =======
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 using System.Text.Json;
 using System.Text.Json.Serialization;
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
 
 namespace HomeManagement;
 
@@ -39,14 +52,20 @@ public class NetworkManager
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
     public static async Task<List<Device>> ScanNetworkAsync(string baseIP, int timeout, CancellationToken token)
 =======
     private static readonly JsonSerializerOptions JsonSerializerOptions = new(JsonSerializerDefaults.Web)
@@ -73,10 +92,15 @@ public class NetworkManager
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
     public static async Task<List<Device>> ScanNetworkAsync(string baseIP, int timeout, CancellationToken token)
     {
@@ -88,14 +112,20 @@ public class NetworkManager
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
             tasks.Add(PingAndResolveAsync(ip, timeout, token));
         }
 
@@ -119,26 +149,37 @@ public class NetworkManager
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
             var reply = await ping.SendPingAsync(ip, TimeSpan.FromMilliseconds(timeout), cancellationToken: token);
 =======
             PingReply reply = await ping.SendPingAsync(ip, TimeSpan.FromMilliseconds(timeout), cancellationToken: token);
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
             var reply = await ping.SendPingAsync(ip, TimeSpan.FromMilliseconds(timeout), cancellationToken: token);
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 =======
             var reply = await ping.SendPingAsync(ip, TimeSpan.FromMilliseconds(timeout), cancellationToken: token);
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
             if (reply.Status == IPStatus.Success)
             {
                 return await GetDeviceInfoAsync(ip, token);
@@ -168,16 +209,22 @@ public class NetworkManager
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
     public static string? GetLocalIp()
     {
         var subnetBytes = GetSubnets();
@@ -207,10 +254,15 @@ public class NetworkManager
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 
     public static byte[]? GetSubnets()
@@ -219,14 +271,20 @@ public class NetworkManager
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
         {
             if (ni.OperationalStatus != OperationalStatus.Up)
             {
@@ -263,14 +321,20 @@ public class NetworkManager
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
         using var httpClient = new HttpClient();
         return await httpClient.GetFromJsonAsync<Device>($"http://{ip}/info", token);
 =======
@@ -304,11 +368,15 @@ public class NetworkManager
 =======
 >>>>>>> 3548e6a (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
         using var httpClient = new HttpClient();
         return await httpClient.GetFromJsonAsync<Device>($"http://{ip}/info", token);
 >>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -321,6 +389,8 @@ public class NetworkManager
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
 =======
 =======
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -344,6 +414,7 @@ public class NetworkManager
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
@@ -352,5 +423,9 @@ public class NetworkManager
 >>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
     }
 }

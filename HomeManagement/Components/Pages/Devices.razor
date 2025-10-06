@@ -1,12 +1,18 @@
 ﻿@page "/devices"
+<<<<<<< HEAD
 @using Microsoft.AspNetCore.Authorization
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 @using Microsoft.EntityFrameworkCore
 @using HomeManagement.Components.Dialogs
 @inject ISnackbar Snackbar
 @inject IDbContextFactory<HomeManagementDbContext> DbContextFactory
 @inject IDialogService DialogService
+<<<<<<< HEAD
 @using System.Net.NetworkInformation
 @attribute [Authorize]
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 
 <PageTitle>Devices</PageTitle>
 
@@ -14,7 +20,14 @@
 	<ToolBarContent>
 		<MudText Typo="Typo.h6">Devices</MudText>
 		<MudSpacer />
+<<<<<<< HEAD
 		<MudButton Variant="Variant.Filled" Color="Color.Primary" Class="me-2 mb-1" OnClick="table.ReloadServerData">Refresh</MudButton>
+=======
+		<MudNumericField T="int" Step="100" Placeholder="Timeout" @bind-Value="timeout" />
+		<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="() => table.ReloadServerData()">Refresh</MudButton>
+        
+		<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="ScanNetworkDevices">Scan</MudButton>
+>>>>>>> fbc592b (Refactor and enhance device management system)
 
 <<<<<<< HEAD
 =======
@@ -22,6 +35,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -82,6 +98,7 @@
 =======
 >>>>>>> 83b53c6 (Refactor and enhance device management system)
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
@@ -91,6 +108,71 @@
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 <MudButton OnClick="On">On</MudButton>
 <MudButton OnClick="Off">Off</MudButton>
+=======
+<MudButton OnClick="On">On</MudButton>
+<MudButton OnClick="Off">Off</MudButton>
+=======
+		<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Add">Add</MudButton>
+	</ToolBarContent>
+	<HeaderContent>
+		<MudTh><MudTableSortLabel T="Device">IP</MudTableSortLabel></MudTh>
+		<MudTh><MudTableSortLabel T="Device">Name</MudTableSortLabel></MudTh>
+		<MudTh><MudTableSortLabel T="Device">Uptime</MudTableSortLabel></MudTh>
+		<MudTh><MudTableSortLabel T="Device">Actions</MudTableSortLabel></MudTh>
+        <MudTh></MudTh>
+	</HeaderContent>
+	<RowTemplate>
+		<MudTd DataLabel="IP">@context.Ip</MudTd>
+        <MudTd DataLabel="Name">@context.Name</MudTd>
+		<MudTd DataLabel="Uptime">@FormatDuration(context.UptimeSeconds)</MudTd>
+		<MudTd DataLabel="Actions">
+			@foreach (var action in context.Actions)
+			{
+				<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => RunAction(context.Ip, action))" Class="me-2 mb-1">@action.Action</MudButton>
+			}
+		</MudTd>
+        <MudTd>
+            <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => Edit(context)" />
+            <MudIconButton Icon="@Icons.Material.Filled.Delete" Color="Color.Error" OnClick="() => Delete(context)" />
+        </MudTd>
+	</RowTemplate>
+	<NoRecordsContent>
+		<MudText>No devices found</MudText>
+	</NoRecordsContent>
+	<LoadingContent>
+		<MudText>Loading...</MudText>
+	</LoadingContent>
+	<PagerContent>
+		<MudTablePager />
+	</PagerContent>
+</MudTable>
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+
+@code {
+
+    int timeout = 100;
+    private MudTable<Device> table;
+
+<<<<<<< HEAD
+	private void Off()
+	{
+		var pinNumber = 10;
+		using var controller = new GpioController();
+		var pin = controller.OpenPin(pinNumber, PinMode.Input, true);
+		pin.Write(0);
+	}
+}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+>>>>>>> fbc592b (Refactor and enhance device management system)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
 		<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Add">Add</MudButton>
 	</ToolBarContent>
@@ -308,21 +390,30 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 <<<<<<< HEAD
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
+>>>>>>> fbc592b (Refactor and enhance device management system)
+=======
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 =======
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
     private async Task ScanNetworkDevices()
     {
         var baseIP = NetworkManager.GetLocalSubnet();
@@ -401,8 +492,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 <<<<<<< HEAD
@@ -435,6 +529,7 @@
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -445,6 +540,12 @@
 >>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+=======
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
     private async Task RunAction(string ip, DeviceAction action)
     {
         using var httpClient = new HttpClient();
@@ -458,6 +559,7 @@
             Snackbar.Add(await result.Content.ReadAsStringAsync(), Severity.Error);
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -477,6 +579,13 @@
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 	private async Task UpdateStatusesAsync(IEnumerable<Device> devices, CancellationToken token)
 	{
 		var tasks = new List<Task>();
@@ -518,6 +627,7 @@
 =======
 >>>>>>> 3548e6a (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 >>>>>>> eeff7ac (Refactor and enhance device management system)
@@ -551,6 +661,7 @@
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -592,6 +703,12 @@
 
 	private DeviceStatus? GetStatus(string name) => statuses.TryGetValue(name, out var st) ? st : null;
 =======
+=======
+=======
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
 
     public static string FormatDuration(long totalSeconds)
     {
@@ -605,8 +722,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 <<<<<<< HEAD
@@ -638,6 +758,7 @@
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -707,6 +828,12 @@
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
 =======
+=======
+=======
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
         if (ts.Days > 0)
             parts.Add($"{ts.Days} day{(ts.Days > 1 ? "s" : "")}");
 
@@ -719,10 +846,16 @@
         parts.Add($"{ts.Seconds} second{(ts.Seconds != 1 ? "s" : "")}");
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
+<<<<<<< HEAD
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 	private async Task RunAction(Device device, DeviceAction action)
 	{
 		var key = (device.Name, action);
@@ -821,6 +954,7 @@
 =======
 >>>>>>> 3548e6a (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 >>>>>>> eeff7ac (Refactor and enhance device management system)
@@ -855,6 +989,7 @@
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -874,6 +1009,12 @@
 		}
 	}
 =======
+=======
+=======
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
 
         return string.Join(", ", parts);
     }
@@ -884,8 +1025,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 <<<<<<< HEAD
@@ -918,6 +1062,7 @@
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -928,6 +1073,12 @@
 >>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+=======
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
     private async void Add()
     {
         var dialog = await DialogService.ShowAsync<IpAddressDialog>("Enter IP");
@@ -961,16 +1112,22 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 	private async Task Add()
 	{
 		var dialog = await DialogService.ShowAsync<IpAddressDialog>("Enter Address");
@@ -1006,6 +1163,7 @@
 =======
 >>>>>>> 3548e6a (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 >>>>>>> eeff7ac (Refactor and enhance device management system)
@@ -1040,6 +1198,7 @@
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -1058,6 +1217,12 @@
 		}
 	}
 =======
+=======
+=======
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
 
     private async Task Edit(Device device)
     {
@@ -1109,8 +1274,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 <<<<<<< HEAD
@@ -1143,6 +1311,7 @@
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -1153,6 +1322,12 @@
 >>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+=======
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
     private async Task Delete(Device device)
     {
         try
@@ -1178,6 +1353,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
@@ -1193,6 +1369,13 @@
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 	private async Task Edit(Device device)
 	{
 		var parameters = new DialogParameters
@@ -1325,10 +1508,14 @@
 }
 >>>>>>> 109a8f2 (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
 }
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 >>>>>>> 83b53c6 (Refactor and enhance device management system)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -1359,6 +1546,7 @@
 >>>>>>> 0df645d (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
@@ -1366,3 +1554,5 @@
 =======
 >>>>>>> 0df645d (Get Status, Update to .NET 10)
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)

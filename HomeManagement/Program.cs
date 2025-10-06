@@ -14,8 +14,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using MudBlazor.Services;
+<<<<<<< HEAD
 using System.Net;
 using System.Security.Claims;
+=======
+using HomeManagement;
+using Microsoft.EntityFrameworkCore;
+>>>>>>> fbc592b (Refactor and enhance device management system)
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -120,10 +125,18 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var dbContextFactory = scope.ServiceProvider.GetRequiredService<IDbContextFactory<HomeManagementDbContext>>();
+<<<<<<< HEAD
     await using var dbContext = await dbContextFactory.CreateDbContextAsync();
     await dbContext.Database.MigrateAsync();
 }
 
+=======
+    using var dbContext = dbContextFactory.CreateDbContext();
+    await dbContext.Database.MigrateAsync();
+}
+
+// Configure the HTTP request pipeline.
+>>>>>>> fbc592b (Refactor and enhance device management system)
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
@@ -173,8 +186,11 @@ app.Run();
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 =======
 <<<<<<< HEAD
@@ -195,18 +211,25 @@ app.Run();
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 >>>>>>> 3d0106c (Add Dashboard, Add Auth)
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
 >>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 app.Run();
 =======
 <<<<<<< HEAD
@@ -214,6 +237,7 @@ app.Run();
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -223,6 +247,8 @@ app.Run();
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
 =======
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -248,6 +274,7 @@ app.Run();
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
@@ -256,6 +283,10 @@ app.Run();
 >>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
 app.MapPost("api/account/login", async (
     HttpContext context,
     IOptions<StaticAuthOptions> authOptions,
@@ -336,20 +367,32 @@ await app.RunAsync();
 await app.RunAsync();
 >>>>>>> 109a8f2 (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 await app.RunAsync();
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 >>>>>>> 83b53c6 (Refactor and enhance device management system)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 0df645d (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 0df645d (Get Status, Update to .NET 10)
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)

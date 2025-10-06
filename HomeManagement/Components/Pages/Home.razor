@@ -368,7 +368,11 @@
 	{
 		try
 		{
+<<<<<<< HEAD
 			Process.Start("poweroff");
+=======
+			Process.Start("poweroff");			
+>>>>>>> fbc592b (Refactor and enhance device management system)
 			Snackbar.Add("Shutting down...", Severity.Success);
 		}
 		catch (Exception e)
@@ -383,16 +387,22 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -400,14 +410,20 @@
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 	private string? GetLocalIp()
 	{
 		var subnetBytes = NetworkManager.GetSubnets();
@@ -422,16 +438,22 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 	private string terminalCommand = string.Empty;
 	private string terminalOutput = string.Empty;
 
@@ -504,10 +526,14 @@
 =======
 >>>>>>> 109a8f2 (Get Status, Update to .NET 10)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
 	}
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 >>>>>>> 83b53c6 (Refactor and enhance device management system)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -537,6 +563,7 @@
 >>>>>>> 0df645d (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
@@ -545,3 +572,12 @@
 >>>>>>> 0df645d (Get Status, Update to .NET 10)
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 }
+=======
+}
+
+<PageTitle>Home</PageTitle>
+
+<MudText>@GetLocalIp()</MudText>
+<MudButton OnClick="Reboot" Color="Color.Error" Variant="Variant.Filled">Reboot</MudButton>
+<MudButton OnClick="Shutdown" Color="Color.Error" Variant="Variant.Filled">Shutdown</MudButton>
+>>>>>>> fbc592b (Refactor and enhance device management system)

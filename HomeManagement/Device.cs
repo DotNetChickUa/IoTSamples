@@ -19,14 +19,20 @@ public record Device(string Name, string Ip, int UptimeSeconds)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 public record DeviceAction(string Action, CommandType CommandType, string Command, string? CommandArgs = null);
 
 public enum CommandType
@@ -36,23 +42,34 @@ public enum CommandType
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+>>>>>>> fbc592b (Refactor and enhance device management system)
 }
 =======
 public record DeviceAction(string Action, string Command);
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
 =======
 }
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+<<<<<<< HEAD
 =======
 =======
 }
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+>>>>>>> fbc592b (Refactor and enhance device management system)
