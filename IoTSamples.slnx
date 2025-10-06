@@ -1,8 +1,12 @@
 <Solution>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <Project Path="BluetoothGpioController.Client/BluetoothGpioController.Client.csproj">
 =======
   <Folder Name="/Solution Items/" Id="8ec462fd-d22e-90a8-e5ce-7e832ba40c5d">
+=======
+  <Folder Name="/Solution Items/">
+>>>>>>> e7bbf9c (Remote Camera)
     <File Path="global.json" />
     <File Path="README.md" />
   </Folder>
@@ -10,5 +14,10 @@
 >>>>>>> a4c4662 (Rework client)
     <Deploy />
   </Project>
+<<<<<<< HEAD
   <Project Path="BluetoothGpioController/BluetoothGpioController.csproj" />
+=======
+  <Project Path="BluetoothGpioController/BluetoothGpioController/BluetoothGpioController.csproj" />
+  <Project Path="RemoteCamera/RemoteCamera.csproj" />
+>>>>>>> e7bbf9c (Remote Camera)
 </Solution>
