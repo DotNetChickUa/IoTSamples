@@ -1,5 +1,6 @@
 ﻿@page "/"
 <<<<<<< HEAD
+<<<<<<< HEAD
 @inject ISnackbar Snackbar
 @inject IDbContextFactory<HomeManagementDbContext> DbContextFactory
 @using Microsoft.EntityFrameworkCore
@@ -352,12 +353,23 @@
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
+@inject ISnackbar Snackbar
+
+@using System.Diagnostics
+
+@code {
+>>>>>>> 540a000 (Refactor code structure and add GPIO control features)
 	private void Reboot()
 	{
 		try
 		{
+<<<<<<< HEAD
 			Process.Start("reboot");
 			Snackbar.Add("Rebooting...", Severity.Success);
+=======
+			Process.Start("sudo", "systemctl reboot");
+>>>>>>> 540a000 (Refactor code structure and add GPIO control features)
 		}
 		catch (Exception e)
 		{
@@ -370,17 +382,22 @@
 		try
 		{
 <<<<<<< HEAD
+<<<<<<< HEAD
 			Process.Start("poweroff");
 =======
 			Process.Start("poweroff");			
 >>>>>>> fbc592b (Refactor and enhance device management system)
 			Snackbar.Add("Shutting down...", Severity.Success);
+=======
+			Process.Start("sudo", "systemctl poweroff");
+>>>>>>> 540a000 (Refactor code structure and add GPIO control features)
 		}
 		catch (Exception e)
 		{
 			Snackbar.Add(e.Message, Severity.Error);
 		}
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -590,3 +607,12 @@
 
 Welcome to your new app.
 >>>>>>> be8e5f2 (Home Management)
+=======
+
+}
+
+<PageTitle>Home</PageTitle>
+
+<MudButton OnClick="Reboot">Reboot</MudButton>
+<MudButton OnClick="Shutdown">Shutdown</MudButton>
+>>>>>>> 540a000 (Refactor code structure and add GPIO control features)

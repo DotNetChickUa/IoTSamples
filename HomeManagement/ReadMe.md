@@ -33,10 +33,14 @@ sudo systemctl enable home-management.service
 sudo systemctl start home-management.service
 sudo systemctl status home-management.service
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 540a000 (Refactor code structure and add GPIO control features)
 
 
 
 
+<<<<<<< HEAD
 ssh anastasia@raspberrypi-zero-2w.local
 rm -r Projects/HomeManagement
 
@@ -44,3 +48,10 @@ rm -r Projects/HomeManagement
 scp -r "./" anastasia@raspberrypi-zero-2w.local:/home/anastasia/Projects/HomeManagement
 =======
 >>>>>>> be8e5f2 (Home Management)
+=======
+ssh anastasia@raspberrypi-zero-2w.local
+rm -r Projects/HomeManagement
+
+
+scp -r "./" anastasia@raspberrypi-zero-2w.local:/home/anastasia/Projects/HomeManagement
+>>>>>>> 540a000 (Refactor code structure and add GPIO control features)

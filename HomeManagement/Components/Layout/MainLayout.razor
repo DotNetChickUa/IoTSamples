@@ -1,6 +1,7 @@
 ﻿@inherits LayoutComponentBase
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <MudRTLProvider RightToLeft="_rightToLeft">
 	<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" />
 	<MudPopoverProvider />
@@ -12,6 +13,10 @@
 =======
 <MudRTLProvider RightToLeft="rightToLeft">
 	<MudThemeProvider @bind-IsDarkMode="@isDarkMode"/>
+=======
+<MudRTLProvider RightToLeft="_rightToLeft">
+	<MudThemeProvider @bind-IsDarkMode="@_isDarkMode"/>
+>>>>>>> 540a000 (Refactor code structure and add GPIO control features)
 	<MudPopoverProvider/>
 	<MudDialogProvider CloseButton="true"
 	                   CloseOnEscapeKey="true"
@@ -86,7 +91,7 @@
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 			<MudSpacer/>
-			<MudToggleIconButton @bind-Toggled="rightToLeft"
+			<MudToggleIconButton @bind-Toggled="_rightToLeft"
 			                     Icon="@Icons.Material.Filled.FormatTextdirectionRToL"
 			                     ToggledIcon="@Icons.Material.Filled.FormatTextdirectionRToL"
 			                     Color="Color.Inherit"/>
@@ -128,6 +133,7 @@
 
 @code {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private bool _drawerOpen = true;
 	private bool _isDarkMode = true;
 	private bool _rightToLeft;
@@ -136,6 +142,11 @@
 	private bool isDarkMode = true;
 	private bool rightToLeft;
 >>>>>>> be8e5f2 (Home Management)
+=======
+	private bool _drawerOpen = true;
+	private bool _isDarkMode = true;
+	private bool _rightToLeft;
+>>>>>>> 540a000 (Refactor code structure and add GPIO control features)
 
 
 	void DrawerToggle()

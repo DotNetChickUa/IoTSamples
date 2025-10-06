@@ -27,6 +27,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
@@ -180,6 +181,8 @@
 =======
 		<PackageReference Include="MudBlazor" Version="8.11.0" />
 >>>>>>> be8e5f2 (Home Management)
+=======
+>>>>>>> 540a000 (Refactor code structure and add GPIO control features)
 	</ItemGroup>
 
 </Project>
