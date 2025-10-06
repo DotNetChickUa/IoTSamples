@@ -20,6 +20,9 @@
 		<PackageReference Include="System.Device.Gpio" Version="4.0.1" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 =======
 <<<<<<< HEAD
@@ -29,6 +32,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -36,6 +42,7 @@
 =======
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -46,9 +53,12 @@
 >>>>>>> 3d0106c (Add Dashboard, Add Auth)
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
 >>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 		<PackageReference Include="MudBlazor" Version="8.11.0" />
 		<PackageReference Include="System.Device.Gpio" Version="4.0.1" />
 =======
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -60,6 +70,13 @@
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
 =======
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 <<<<<<< HEAD
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
@@ -70,17 +87,23 @@
 >>>>>>> a123fff (Add Dashboard, Add Auth)
 >>>>>>> 3d0106c (Add Dashboard, Add Auth)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
 >>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.9">
 =======
 		<PackageReference Include="LiveStreamingServerNet.StreamProcessor.AspNetCore" Version="0.31.1" />
@@ -94,8 +117,11 @@
 >>>>>>> 109a8f2 (Get Status, Update to .NET 10)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.9">
 		  <PrivateAssets>all</PrivateAssets>
@@ -106,11 +132,17 @@
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 >>>>>>> 83b53c6 (Refactor and enhance device management system)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 0df645d (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+>>>>>>> 0df645d (Get Status, Update to .NET 10)
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 	</ItemGroup>
 
 </Project>

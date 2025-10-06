@@ -48,12 +48,18 @@ builder.Services.AddLiveStreamingServer(
     options => options.AddStandaloneServices().AddFlv()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 <<<<<<< HEAD
 =======
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 <<<<<<< HEAD
 <<<<<<< HEAD
     options => options.AddStandaloneServices().AddFlv()
@@ -65,12 +71,18 @@ builder.Services.AddLiveStreamingServer(
     .AddAuthorizationHandler<DemoAuthorizationHandler>()
 >>>>>>> 0efb677 (Add Dashboard, Add Auth)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
     options => options
     .AddAuthorizationHandler<StreamAuthorizationHandler>()
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
     .AddStandaloneServices()
     .AddFlv()
     .AddStreamProcessor()
@@ -78,19 +90,28 @@ builder.Services.AddLiveStreamingServer(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 >>>>>>> 3548e6a (Get Status, Update to .NET 10)
 =======
 >>>>>>> 0efb677 (Add Dashboard, Add Auth)
 >>>>>>> 3d0106c (Add Dashboard, Add Auth)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 >>>>>>> 3548e6a (Get Status, Update to .NET 10)
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 );
 builder.Services.AddHttpContextAccessor();
 
@@ -151,6 +172,9 @@ app.MapRazorComponents<App>()
 app.Run();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 =======
 <<<<<<< HEAD
@@ -160,6 +184,9 @@ app.Run();
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -167,6 +194,7 @@ app.Run();
 =======
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -177,10 +205,13 @@ app.Run();
 >>>>>>> 3d0106c (Add Dashboard, Add Auth)
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
 >>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 app.Run();
 =======
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -191,6 +222,13 @@ app.Run();
 <<<<<<< HEAD
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 =======
@@ -201,17 +239,23 @@ app.Run();
 >>>>>>> a123fff (Add Dashboard, Add Auth)
 >>>>>>> 3d0106c (Add Dashboard, Add Auth)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
 >>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 app.MapPost("api/account/login", async (
     HttpContext context,
     IOptions<StaticAuthOptions> authOptions,
@@ -246,6 +290,9 @@ app.MapPost("api/account/login", async (
     static string NormalizeReturnUrl(string? ru)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
         if (string.IsNullOrWhiteSpace(ru))
         {
             return "/";
@@ -256,10 +303,13 @@ app.MapPost("api/account/login", async (
             return ru;
         }
 
+<<<<<<< HEAD
 =======
         if (string.IsNullOrWhiteSpace(ru)) return "/";
         if (Uri.TryCreate(ru, UriKind.Relative, out _)) return ru;
 >>>>>>> 0efb677 (Add Dashboard, Add Auth)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
         return "/";
     }
 });
@@ -271,6 +321,7 @@ app.MapPost("api/account/logout", async (HttpContext ctx) =>
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 3548e6a (Get Status, Update to .NET 10)
 =======
 >>>>>>> 0efb677 (Add Dashboard, Add Auth)
@@ -281,12 +332,24 @@ await app.RunAsync();
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
+>>>>>>> 3548e6a (Get Status, Update to .NET 10)
+await app.RunAsync();
+>>>>>>> 109a8f2 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+=======
 await app.RunAsync();
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 >>>>>>> 83b53c6 (Refactor and enhance device management system)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 0df645d (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+>>>>>>> 0df645d (Get Status, Update to .NET 10)
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)

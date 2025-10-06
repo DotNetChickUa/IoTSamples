@@ -1,10 +1,14 @@
 @namespace HomeManagement.Components.Dialogs
 @using MudBlazor
+<<<<<<< HEAD
 @inject ISnackbar Snackbar
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 @using HomeManagement.Components.Dialogs
 @inherits ComponentBase
 
 <MudPaper Class="pa-4" Elevation="1" Style="min-width:500px;max-width:800px;">
+<<<<<<< HEAD
 	<MudStack Spacing="2">
 		<MudText Typo="Typo.h6">Discovered Devices</MudText>
 		<MudTable T="SelectableDevice" Items="devices" Dense="true" Hover="true" Bordered="true" Class="my-2">
@@ -50,7 +54,63 @@
 			}
 
 			var networkDevices = await NetworkManager.ScanNetworkAsync(baseIP, 100, CancellationToken.None);
+=======
+    <MudStack Spacing="2">
+        <MudText Typo="Typo.h6">Discovered Devices</MudText>
+        <MudTable T="SelectableDevice" Items="devices" Dense="true" Hover="true" Bordered="true" Class="my-2">
+            <HeaderContent>
+                <MudTh></MudTh>
+                <MudTh>IP</MudTh>
+                <MudTh>Name</MudTh>
+                <MudTh>Uptime</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd><MudCheckBox T="bool" @bind-Value="context.Selected" /></MudTd>
+                <MudTd>@context.Device.Ip</MudTd>
+                <MudTd>@context.Device.Name</MudTd>
+                <MudTd>@context.Device.UptimeSeconds</MudTd>
+            </RowTemplate>
+            <NoRecordsContent>
+                <MudText>No devices found</MudText>
+            </NoRecordsContent>
+        </MudTable>
+        <MudProgressCircular Indeterminate="true" Style="@(loading ? "" : "display:none;")" />
+        <MudStack Row="true" Justify="Justify.FlexEnd" Spacing="2">
+            <MudButton Variant="Variant.Text" Color="Color.Secondary" OnClick="Cancel">Cancel</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Disabled="@(!devices.Any(d => d.Selected))" OnClick="Save">Add Selected</MudButton>
+        </MudStack>
+    </MudStack>
+</MudPaper>
 
+@code {
+    [CascadingParameter] IMudDialogInstance DialogReference { get; set; } = default!;
+    [Parameter] public Task<List<Device>>? LoadTask { get; set; }
+
+    private List<SelectableDevice> devices = new();
+    private bool loading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (LoadTask is not null)
+        {
+            try
+            {
+                var loaded = await LoadTask;
+                devices = loaded.Select(d => new SelectableDevice { Device = d }).ToList();
+            }
+            catch { }
+        }
+        loading = false;
+    }
+
+    private void Save()
+    {
+        var chosen = devices.Where(d => d.Selected).Select(d => d.Device).ToList();
+        DialogReference.Close(DialogResult.Ok(chosen));
+    }
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -63,6 +123,12 @@
 =======
 =======
 >>>>>>> 0efb677 (Add Dashboard, Add Auth)
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+    private void Cancel() => DialogReference.Close(DialogResult.Cancel());
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 			devices = networkDevices.Select(d => new SelectableDevice { Device = d }).ToList();
 		}
 		catch { }
@@ -83,15 +149,22 @@
 	public static string FormatDuration(long totalSeconds)
 	{
 <<<<<<< HEAD
+<<<<<<< HEAD
 		var ts = TimeSpan.FromSeconds(totalSeconds);
 =======
 		TimeSpan ts = TimeSpan.FromSeconds(totalSeconds);
 >>>>>>> 0efb677 (Add Dashboard, Add Auth)
+=======
+		var ts = TimeSpan.FromSeconds(totalSeconds);
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 
 		var parts = new List<string>();
 
 		if (ts.Days > 0)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 		{
 			parts.Add($"{ts.Days} day{(ts.Days > 1 ? "s" : "")}");
 		}
@@ -105,6 +178,7 @@
 		{
 			parts.Add($"{ts.Minutes} minute{(ts.Minutes != 1 ? "s" : "")}");
 		}
+<<<<<<< HEAD
 =======
 			parts.Add($"{ts.Days} day{(ts.Days > 1 ? "s" : "")}");
 
@@ -114,17 +188,25 @@
 		if (ts.Minutes > 0 || parts.Count > 0)
 			parts.Add($"{ts.Minutes} minute{(ts.Minutes != 1 ? "s" : "")}");
 >>>>>>> 0efb677 (Add Dashboard, Add Auth)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 
 		parts.Add($"{ts.Seconds} second{(ts.Seconds != 1 ? "s" : "")}");
 
 		return string.Join(", ", parts);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 3548e6a (Get Status, Update to .NET 10)
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 3548e6a (Get Status, Update to .NET 10)
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
     private void Cancel() => DialogReference.Close(DialogResult.Cancel());
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 <<<<<<< HEAD
@@ -132,10 +214,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
 =======
+=======
+=======
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 <<<<<<< HEAD
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
@@ -144,11 +231,15 @@
 >>>>>>> a123fff (Add Dashboard, Add Auth)
 >>>>>>> 3d0106c (Add Dashboard, Add Auth)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -158,4 +249,6 @@
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
 >>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 }

@@ -9,22 +9,33 @@
 @code {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 <<<<<<< HEAD
 =======
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 <<<<<<< HEAD
 <<<<<<< HEAD
 
 @code {
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+=======
+>>>>>>> 0de0591 (Get Status, Update to .NET 10)
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 
 <PageTitle>Home</PageTitle>
 
@@ -115,8 +126,11 @@
 	private string? cpuInfo;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 @using System.Net.NetworkInformation
 
@@ -161,10 +175,15 @@
 	private string? localIp;
 >>>>>>> 0efb677 (Add Dashboard, Add Auth)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+=======
+>>>>>>> 0de0591 (Get Status, Update to .NET 10)
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 
 	protected override async Task OnInitializedAsync()
 	{
@@ -172,24 +191,35 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+=======
+>>>>>>> 0de0591 (Get Status, Update to .NET 10)
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 		uptime = GetUptime();
 		diskSpace = GetDiskSpace();
 		networkData = GetNetworkData();
 		cpuInfo = GetCpuInfo();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 >>>>>>> 0efb677 (Add Dashboard, Add Auth)
 =======
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 0efb677 (Add Dashboard, Add Auth)
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 		await using var db = await DbContextFactory.CreateDbContextAsync();
 		totalDevices = await db.Devices.CountAsync();
 	}
@@ -197,10 +227,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+=======
+>>>>>>> 0de0591 (Get Status, Update to .NET 10)
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 	private string? GetUptime()
 	{
 		try
@@ -299,17 +334,23 @@
 >>>>>>> 3548e6a (Get Status, Update to .NET 10)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 >>>>>>> 0efb677 (Add Dashboard, Add Auth)
 >>>>>>> 3d0106c (Add Dashboard, Add Auth)
 =======
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 0efb677 (Add Dashboard, Add Auth)
 >>>>>>> 3d0106c (Add Dashboard, Add Auth)
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 	private void Reboot()
 	{
 		try
@@ -341,21 +382,32 @@
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
 >>>>>>> eeff7ac (Refactor and enhance device management system)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 	private string? GetLocalIp()
 	{
 		var subnetBytes = NetworkManager.GetSubnets();
@@ -369,11 +421,17 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 >>>>>>> 5e15dfb (Refactor and enhance device management system)
 =======
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 	private string terminalCommand = string.Empty;
 	private string terminalOutput = string.Empty;
 
@@ -422,6 +480,7 @@
 >>>>>>> 3548e6a (Get Status, Update to .NET 10)
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 109a8f2 (Get Status, Update to .NET 10)
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -442,6 +501,20 @@
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
 =======
+=======
+>>>>>>> 109a8f2 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
+=======
+	}
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 83b53c6 (Refactor and enhance device management system)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 =======
 =======
@@ -451,11 +524,15 @@
 >>>>>>> a123fff (Add Dashboard, Add Auth)
 >>>>>>> 3d0106c (Add Dashboard, Add Auth)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 =======
 =======
 >>>>>>> a319cbf (Get Status, Update to .NET 10)
 >>>>>>> 0de0591 (Get Status, Update to .NET 10)
 >>>>>>> d4eca16 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 0df645d (Get Status, Update to .NET 10)
 =======
@@ -464,4 +541,7 @@
 =======
 >>>>>>> 33bd328 (Add Dashboard, Add Auth)
 >>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+=======
+>>>>>>> 0df645d (Get Status, Update to .NET 10)
+>>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 }

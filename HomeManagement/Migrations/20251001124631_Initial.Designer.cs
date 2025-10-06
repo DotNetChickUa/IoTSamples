@@ -2,6 +2,7 @@
 using HomeManagement;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,35 +10,18 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HomeManagement.Migrations
 {
     [DbContext(typeof(HomeManagementDbContext))]
-    partial class HomeManagementDbContextModelSnapshot : ModelSnapshot
+<<<<<<<< HEAD:HomeManagement/Migrations/20250913130714_Initial.Designer.cs
+    [Migration("20250913130714_Initial")]
+========
+    [Migration("20251001124631_Initial")]
+>>>>>>>> 3548e6a (Get Status, Update to .NET 10):HomeManagement/Migrations/20251001124631_Initial.Designer.cs
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
             modelBuilder.HasAnnotation("ProductVersion", "10.0.0-rc.1.25451.107");
-=======
-            modelBuilder.HasAnnotation("ProductVersion", "9.0.9");
->>>>>>> eeff7ac (Refactor and enhance device management system)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-            modelBuilder.HasAnnotation("ProductVersion", "10.0.0-rc.1.25451.107");
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
-=======
-            modelBuilder.HasAnnotation("ProductVersion", "10.0.0-rc.1.25451.107");
->>>>>>> a319cbf (Get Status, Update to .NET 10)
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 
             modelBuilder.Entity("HomeManagement.Device", b =>
                 {
@@ -50,12 +34,9 @@ namespace HomeManagement.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-<<<<<<< HEAD
-=======
                     b.Property<int>("UptimeSeconds")
                         .HasColumnType("INTEGER");
 
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
                     b.HasKey("Name");
 
                     b.ToTable("Devices", (string)null);
@@ -78,40 +59,12 @@ namespace HomeManagement.Migrations
                                 .IsRequired()
                                 .HasColumnType("TEXT");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
                             b1.Property<string>("CommandArgs")
                                 .HasColumnType("TEXT");
 
                             b1.Property<int>("CommandType")
                                 .HasColumnType("INTEGER");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> eeff7ac (Refactor and enhance device management system)
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> eeff7ac (Refactor and enhance device management system)
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
                             b1.Property<string>("DeviceName")
                                 .IsRequired()
                                 .HasColumnType("TEXT");
