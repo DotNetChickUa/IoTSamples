@@ -18,6 +18,9 @@
   <Project Path="BluetoothGpioController/BluetoothGpioController.csproj" />
 =======
   <Project Path="BluetoothGpioController/BluetoothGpioController/BluetoothGpioController.csproj" />
+<<<<<<< HEAD
   <Project Path="RemoteCamera/RemoteCamera.csproj" />
 >>>>>>> e7bbf9c (Remote Camera)
+=======
+>>>>>>> c522be4 (Remove remote camera)
 </Solution>
