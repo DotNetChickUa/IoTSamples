@@ -1,0 +1,1015 @@
+﻿@page "/devices"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.EntityFrameworkCore
+@using HomeManagement.Components.Dialogs
+@inject ISnackbar Snackbar
+@inject IDbContextFactory<HomeManagementDbContext> DbContextFactory
+@inject IDialogService DialogService
+@using System.Net.NetworkInformation
+@attribute [Authorize]
+
+<PageTitle>Devices</PageTitle>
+
+<MudTable @ref="table" ServerData="ServerReload" Dense="true" Hover="true">
+	<ToolBarContent>
+		<MudText Typo="Typo.h6">Devices</MudText>
+		<MudSpacer />
+		<MudButton Variant="Variant.Filled" Color="Color.Primary" Class="me-2 mb-1" OnClick="table.ReloadServerData">Refresh</MudButton>
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 3d0106c (Add Dashboard, Add Auth)
+>>>>>>> d4eca16 (Get Status, Update to .NET 10)
+=======
+>>>>>>> 0de0591 (Get Status, Update to .NET 10)
+=======
+>>>>>>> 3d0106c (Add Dashboard, Add Auth)
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 83b53c6 (Refactor and enhance device management system)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+<<<<<<< HEAD
+>>>>>>> a123fff (Add Dashboard, Add Auth)
+>>>>>>> 3d0106c (Add Dashboard, Add Auth)
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+>>>>>>> 0de0591 (Get Status, Update to .NET 10)
+>>>>>>> d4eca16 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
+>>>>>>> 0df645d (Get Status, Update to .NET 10)
+=======
+>>>>>>> 83b53c6 (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+>>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+<MudButton OnClick="On">On</MudButton>
+<MudButton OnClick="Off">Off</MudButton>
+=======
+		<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Add">Add</MudButton>
+	</ToolBarContent>
+	<HeaderContent>
+		<MudTh><MudTableSortLabel T="Device">IP</MudTableSortLabel></MudTh>
+		<MudTh><MudTableSortLabel T="Device">Name</MudTableSortLabel></MudTh>
+		<MudTh><MudTableSortLabel T="Device">Uptime</MudTableSortLabel></MudTh>
+		<MudTh><MudTableSortLabel T="Device">Actions</MudTableSortLabel></MudTh>
+        <MudTh></MudTh>
+	</HeaderContent>
+	<RowTemplate>
+		<MudTd DataLabel="IP">@context.Ip</MudTd>
+        <MudTd DataLabel="Name">@context.Name</MudTd>
+		<MudTd DataLabel="Uptime">@FormatDuration(context.UptimeSeconds)</MudTd>
+		<MudTd DataLabel="Actions">
+			@foreach (var action in context.Actions)
+			{
+				<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => RunAction(context.Ip, action))" Class="me-2 mb-1">@action.Action</MudButton>
+			}
+		</MudTd>
+        <MudTd>
+            <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => Edit(context)" />
+            <MudIconButton Icon="@Icons.Material.Filled.Delete" Color="Color.Error" OnClick="() => Delete(context)" />
+        </MudTd>
+	</RowTemplate>
+	<NoRecordsContent>
+		<MudText>No devices found</MudText>
+	</NoRecordsContent>
+	<LoadingContent>
+		<MudText>Loading...</MudText>
+	</LoadingContent>
+	<PagerContent>
+		<MudTablePager />
+	</PagerContent>
+</MudTable>
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+
+@code {
+
+    int timeout = 100;
+    private MudTable<Device> table;
+
+<<<<<<< HEAD
+	private void Off()
+	{
+		var pinNumber = 10;
+		using var controller = new GpioController();
+		var pin = controller.OpenPin(pinNumber, PinMode.Input, true);
+		pin.Write(0);
+	}
+}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+		<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Add">Add</MudButton>
+=======
+		<MudButton Variant="Variant.Filled" Color="Color.Primary" Class="me-2 mb-1" OnClick="ScanNetworkDevices">Scan</MudButton>
+
+		<MudButton Variant="Variant.Filled" Color="Color.Primary" Class="me-2 mb-1" OnClick="Add">Add</MudButton>
+>>>>>>> 5be7bab (Add Dashboard, Add Auth)
+	</ToolBarContent>
+	<HeaderContent>
+		<MudTh><MudTableSortLabel T="Device">IP</MudTableSortLabel></MudTh>
+		<MudTh><MudTableSortLabel T="Device">Name</MudTableSortLabel></MudTh>
+		<MudTh>Status</MudTh>
+		<MudTh>Uptime</MudTh>
+		<MudTh><MudTableSortLabel T="Device">Actions</MudTableSortLabel></MudTh>
+		<MudTh></MudTh>
+	</HeaderContent>
+	<RowTemplate>
+		<MudTd DataLabel="IP">@context.Ip</MudTd>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <MudTd DataLabel="Name">@context.Name</MudTd>
+		<MudTd DataLabel="Uptime">@FormatDuration(context.UptimeSeconds)</MudTd>
+		<MudTd DataLabel="Actions">
+			@foreach (var action in context.Actions)
+			{
+				<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => RunAction(context.Ip, action))" Class="me-2 mb-1">@action.Action</MudButton>
+=======
+		<MudTd DataLabel="Name">@context.Name</MudTd>
+		<MudTd DataLabel="Status">
+			@{
+				var st = GetStatus(context.Name);
+				if (st is null || st.Loading)
+				{
+					<MudProgressCircular Indeterminate="true" Size="Size.Small" />
+				}
+				else
+				{
+					<MudChip T="string" Color="@(st.Online? Color.Success: Color.Error)" Variant="Variant.Filled">@(st.Online ? "Online" : "Offline")</MudChip>
+				}
+			}
+		</MudTd>
+		<MudTd DataLabel="Uptime">
+			@FormatDuration(GetStatus(context.Name)?.UptimeSeconds)
+		</MudTd>
+		<MudTd DataLabel="Actions">
+			@foreach (var action in context.Actions)
+			{
+				var st = GetStatus(context.Name);
+				var disabled = st is null || st.Loading || !st.Online || runningActions.Contains((context.Name, action));
+				<MudButton Size="Size.Small" Variant="Variant.Filled" Color="Color.Primary" Disabled="@disabled" OnClick="@(() => RunAction(context, action))" Class="me-2 mb-1">
+					@if (runningActions.Contains((context.Name, action)))
+=======
+		<MudTd DataLabel="Name">@context.Name</MudTd>
+		<MudTd DataLabel="Status">
+			@{
+				var st = GetStatus(context.Name);
+				if (st is null || st.Loading)
+				{
+					<MudProgressCircular Indeterminate="true" Size="Size.Small" />;
+				}
+				else
+				{
+					<MudChip T="string" Color="@(st.Online ? Color.Success : Color.Error)" Variant="Variant.Filled">@(st.Online ? "Online" : "Offline")</MudChip>;
+				}
+			}
+		</MudTd>
+		<MudTd DataLabel="Uptime">
+			@FormatDuration(GetStatus(context.Name)?.UptimeSeconds)
+		</MudTd>
+		<MudTd DataLabel="Actions">
+			@foreach (var action in context.Actions)
+			{
+				var st = GetStatus(context.Name);
+				var disabled = st is null || st.Loading || !st.Online || runningActions.Contains((context.Name, action.Action));
+				<MudButton Size="Size.Small" Variant="Variant.Filled" Color="Color.Primary" Disabled="@disabled" OnClick="@(() => RunAction(context, action))" Class="me-2 mb-1">
+					@if (runningActions.Contains((context.Name, action.Action)))
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+					{
+						<MudProgressCircular Indeterminate="true" Size="Size.Small" Class="me-1" />
+					}
+					@action.Action
+				</MudButton>
+<<<<<<< HEAD
+>>>>>>> 3548e6a (Get Status, Update to .NET 10)
+=======
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+			}
+		</MudTd>
+		<MudTd>
+			<MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="() => Edit(context)" />
+			<MudIconButton Icon="@Icons.Material.Filled.Delete" Color="Color.Error" OnClick="() => Delete(context)" />
+		</MudTd>
+	</RowTemplate>
+	<NoRecordsContent>
+		<MudText>No devices found</MudText>
+	</NoRecordsContent>
+	<LoadingContent>
+		<MudText>Loading...</MudText>
+	</LoadingContent>
+	<PagerContent>
+		<MudTablePager />
+	</PagerContent>
+</MudTable>
+
+@code {
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+    int timeout = 100;
+    private MudTable<Device> table;
+=======
+	private MudTable<Device> table = null!;
+	private readonly Dictionary<string, DeviceStatus> statuses = new();
+	private readonly HashSet<(string DeviceName, DeviceAction Action)> runningActions = new();
+>>>>>>> 3548e6a (Get Status, Update to .NET 10)
+=======
+	private MudTable<Device> table = null!;
+	private readonly Dictionary<string, DeviceStatus> statuses = new();
+	private readonly HashSet<(string DeviceName, string Action)> runningActions = new();
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+    private async Task ScanNetworkDevices()
+    {
+        var baseIP = NetworkManager.GetLocalSubnet();
+        if (baseIP is null)
+        {
+            Snackbar.Add("No active IPv4 network interface found.", Severity.Error);
+            return;
+        }
+=======
+	private async Task<TableData<Device>> ServerReload(TableState state, CancellationToken token)
+	{
+		await using var dbContext = await DbContextFactory.CreateDbContextAsync(token);
+		var query = dbContext.Devices.Include(d => d.Actions).OrderBy(d => d.Name);
+>>>>>>> 5be7bab (Add Dashboard, Add Auth)
+
+		var totalItems = await query.CountAsync(token);
+		var devices = await query.Skip(state.Page * state.PageSize).Take(state.PageSize).ToListAsync(token);
+
+		// Start/refresh status fetch for current page devices
+		_ = UpdateStatusesAsync(devices, token);
+
+		return new TableData<Device>() { TotalItems = totalItems, Items = devices };
+	}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+<<<<<<< HEAD
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5be7bab (Add Dashboard, Add Auth)
+>>>>>>> a123fff (Add Dashboard, Add Auth)
+>>>>>>> 3d0106c (Add Dashboard, Add Auth)
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+>>>>>>> 0de0591 (Get Status, Update to .NET 10)
+>>>>>>> d4eca16 (Get Status, Update to .NET 10)
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+>>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+    private async Task RunAction(string ip, DeviceAction action)
+    {
+        using var httpClient = new HttpClient();
+        var result = await httpClient.GetAsync($"http://{ip}{action.Command}");
+        if (result.IsSuccessStatusCode)
+        {
+            Snackbar.Add(await result.Content.ReadAsStringAsync(), Severity.Success);
+        }
+        else
+        {
+            Snackbar.Add(await result.Content.ReadAsStringAsync(), Severity.Error);
+        }
+    }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+<<<<<<< HEAD
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+=======
+=======
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+>>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+	private async Task UpdateStatusesAsync(IEnumerable<Device> devices, CancellationToken token)
+	{
+		var tasks = new List<Task>();
+		foreach (var device in devices)
+		{
+			if (!statuses.TryGetValue(device.Name, out var st))
+			{
+				st = new DeviceStatus();
+				statuses[device.Name] = st;
+			}
+<<<<<<< HEAD
+
+			st.Loading = true;
+			tasks.Add(UpdateDeviceStatusAsync(device, st, token));
+		}
+
+=======
+			st.Loading = true;
+			tasks.Add(UpdateDeviceStatusAsync(device, st, token));
+		}
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+		StateHasChanged();
+		await Task.WhenAll(tasks);
+		StateHasChanged();
+	}
+<<<<<<< HEAD
+>>>>>>> 3548e6a (Get Status, Update to .NET 10)
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+<<<<<<< HEAD
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+>>>>>>> 5be7bab (Add Dashboard, Add Auth)
+>>>>>>> a123fff (Add Dashboard, Add Auth)
+>>>>>>> 3d0106c (Add Dashboard, Add Auth)
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+>>>>>>> 0de0591 (Get Status, Update to .NET 10)
+>>>>>>> d4eca16 (Get Status, Update to .NET 10)
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+>>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+
+	private async Task UpdateDeviceStatusAsync(Device device, DeviceStatus status, CancellationToken token)
+	{
+		try
+		{
+			var info = await NetworkManager.GetDeviceInfoAsync(device.Ip, token);
+			if (info is not null)
+			{
+				status.Online = true;
+				status.UptimeSeconds = info.UptimeSeconds;
+			}
+			else
+			{
+				using var ping = new Ping();
+				var reply = await ping.SendPingAsync(device.Ip, 250);
+				status.Online = reply.Status == IPStatus.Success;
+				status.UptimeSeconds = null;
+			}
+		}
+		catch
+		{
+			status.Online = false;
+			status.UptimeSeconds = null;
+		}
+		finally
+		{
+			status.Loading = false;
+		}
+	}
+
+	private DeviceStatus? GetStatus(string name) => statuses.TryGetValue(name, out var st) ? st : null;
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+<<<<<<< HEAD
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5be7bab (Add Dashboard, Add Auth)
+>>>>>>> a123fff (Add Dashboard, Add Auth)
+>>>>>>> 3d0106c (Add Dashboard, Add Auth)
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+>>>>>>> 0de0591 (Get Status, Update to .NET 10)
+>>>>>>> d4eca16 (Get Status, Update to .NET 10)
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+>>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+        if (ts.Days > 0)
+            parts.Add($"{ts.Days} day{(ts.Days > 1 ? "s" : "")}");
+=======
+	private async Task RunAction(Device device, DeviceAction action)
+	{
+		var key = (device.Name, action.Action);
+		if (!runningActions.Add(key)) return;
+		try
+		{
+			using var httpClient = new HttpClient();
+			var result = await httpClient.GetAsync($"http://{device.Ip}{action.Command}");
+			if (result.IsSuccessStatusCode)
+			{
+				Snackbar.Add(await result.Content.ReadAsStringAsync(), Severity.Success);
+			}
+			else
+			{
+				Snackbar.Add(await result.Content.ReadAsStringAsync(), Severity.Error);
+			}
+		}
+		catch (Exception ex)
+		{
+			Snackbar.Add(ex.Message, Severity.Error);
+		}
+		finally
+		{
+			runningActions.Remove(key);
+		}
+	}
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+
+	public static string FormatDuration(int? seconds)
+	{
+		if (seconds is null) return string.Empty;
+		var ts = TimeSpan.FromSeconds(seconds.Value);
+		var parts = new List<string>();
+		if (ts.Days > 0) parts.Add($"{ts.Days}d");
+		if (ts.Hours > 0 || parts.Count > 0) parts.Add($"{ts.Hours}h");
+		if (ts.Minutes > 0 || parts.Count > 0) parts.Add($"{ts.Minutes}m");
+		parts.Add($"{ts.Seconds}s");
+		return string.Join(" ", parts);
+	}
+
+	private async Task ScanNetworkDevices()
+	{
+		var dialog = await DialogService.ShowAsync<ScanDevicesDialog>("Scan Network");
+		var result = await dialog.Result;
+		if (result is null || result.Canceled == true) return;
+
+<<<<<<< HEAD
+        parts.Add($"{ts.Seconds} second{(ts.Seconds != 1 ? "s" : "")}");
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+	private async Task RunAction(Device device, DeviceAction action)
+	{
+		var key = (device.Name, action);
+		if (!runningActions.Add(key))
+		{
+			return;
+		}
+
+		try
+		{
+			using var httpClient = new HttpClient();
+			httpClient.BaseAddress = new Uri($"http://{device.Ip}");
+			var result = action.CommandType switch
+			{
+				CommandType.Get => await httpClient.GetAsync($"{action.Command}?{action.CommandArgs}"),
+				CommandType.Post => await httpClient.PostAsync(action.Command, string.IsNullOrWhiteSpace(action.CommandArgs) ? null : new StringContent(action.CommandArgs)),
+				_ => throw new ArgumentOutOfRangeException()
+			};
+
+			Snackbar.Add(await result.Content.ReadAsStringAsync(), result.IsSuccessStatusCode ? Severity.Success : Severity.Error);
+		}
+		catch (Exception ex)
+		{
+			Snackbar.Add(ex.Message, Severity.Error);
+		}
+		finally
+		{
+			runningActions.Remove(key);
+		}
+	}
+
+	public static string FormatDuration(int? seconds)
+	{
+		if (seconds is null)
+		{
+			return string.Empty;
+		}
+
+		var ts = TimeSpan.FromSeconds(seconds.Value);
+		var parts = new List<string>();
+		if (ts.Days > 0)
+		{
+			parts.Add($"{ts.Days}d");
+		}
+
+		if (ts.Hours > 0 || parts.Count > 0)
+		{
+			parts.Add($"{ts.Hours}h");
+		}
+
+		if (ts.Minutes > 0 || parts.Count > 0)
+		{
+			parts.Add($"{ts.Minutes}m");
+		}
+
+		parts.Add($"{ts.Seconds}s");
+		return string.Join(" ", parts);
+	}
+
+	private async Task ScanNetworkDevices()
+	{
+		var dialog = await DialogService.ShowAsync<ScanDevicesDialog>("Scan Network");
+		var result = await dialog.Result;
+		if (result is null || result.Canceled)
+		{
+			return;
+		}
+
+		var devices = (List<NetworkDevice>)result.Data!;
+		if (devices.Count == 0)
+		{
+			return;
+		}
+
+=======
+		var devices = (List<NetworkDevice>)result.Data!;
+		if (devices.Count == 0) return;
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+		try
+		{
+			await using var dbContext = await DbContextFactory.CreateDbContextAsync();
+			foreach (var device in devices)
+			{
+				dbContext.Devices.Add(device);
+			}
+<<<<<<< HEAD
+>>>>>>> 3548e6a (Get Status, Update to .NET 10)
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+<<<<<<< HEAD
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+>>>>>>> 5be7bab (Add Dashboard, Add Auth)
+>>>>>>> a123fff (Add Dashboard, Add Auth)
+>>>>>>> 3d0106c (Add Dashboard, Add Auth)
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+>>>>>>> 0de0591 (Get Status, Update to .NET 10)
+>>>>>>> d4eca16 (Get Status, Update to .NET 10)
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+>>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+
+			await dbContext.SaveChangesAsync();
+			Snackbar.Add($"Added {devices.Count} device(s).", Severity.Success);
+			await table.ReloadServerData();
+		}
+		catch (Exception ex)
+		{
+			Snackbar.Add($"Failed to add scanned devices: {ex.InnerException?.Message ?? ex.Message}", Severity.Error);
+		}
+	}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+<<<<<<< HEAD
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5be7bab (Add Dashboard, Add Auth)
+>>>>>>> a123fff (Add Dashboard, Add Auth)
+>>>>>>> 3d0106c (Add Dashboard, Add Auth)
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+>>>>>>> 0de0591 (Get Status, Update to .NET 10)
+>>>>>>> d4eca16 (Get Status, Update to .NET 10)
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+>>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+    private async void Add()
+    {
+        var dialog = await DialogService.ShowAsync<IpAddressDialog>("Enter IP");
+        var result = await dialog.Result;
+        if (result.Canceled) return;
+        var ip = (string)result.Data!;
+        try
+        {
+            using var httpClient = new HttpClient();
+            var device = await httpClient.GetFromJsonAsync<Device>($"http://{ip}/info");
+            if (device is null)
+            {
+                Snackbar.Add("Failed to fetch device info.", Severity.Error);
+                return;
+            }
+            await using var dbContext = await DbContextFactory.CreateDbContextAsync();
+            dbContext.Devices.Add(new Device(device.Name, device.Ip, device.UptimeSeconds)
+            {
+                Actions = device.Actions.Select(a => new DeviceAction(a.Action, a.Command)).ToList()
+            });
+            await dbContext.SaveChangesAsync();
+            Snackbar.Add($"Device '{device.Name}' added.", Severity.Success);
+            await table.ReloadServerData();
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Failed to add device: {ex.Message}", Severity.Error);
+        }
+    }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+	private async Task Add()
+	{
+		var dialog = await DialogService.ShowAsync<IpAddressDialog>("Enter Address");
+		var result = await dialog.Result;
+		if (result is null || result.Canceled)
+		{
+			return;
+		}
+
+=======
+	private async void Add()
+	{
+		var dialog = await DialogService.ShowAsync<IpAddressDialog>("Enter Address");
+		var result = await dialog.Result;
+		if (result is null || result.Canceled == true) return;
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+		var device = (NetworkDevice)result.Data!;
+		try
+		{
+			await using var dbContext = await DbContextFactory.CreateDbContextAsync();
+			dbContext.Devices.Add(device);
+			await dbContext.SaveChangesAsync();
+<<<<<<< HEAD
+>>>>>>> 3548e6a (Get Status, Update to .NET 10)
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+<<<<<<< HEAD
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+>>>>>>> 5be7bab (Add Dashboard, Add Auth)
+>>>>>>> a123fff (Add Dashboard, Add Auth)
+>>>>>>> 3d0106c (Add Dashboard, Add Auth)
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+>>>>>>> 0de0591 (Get Status, Update to .NET 10)
+>>>>>>> d4eca16 (Get Status, Update to .NET 10)
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+>>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+
+			Snackbar.Add($"Device '{device.Name}' added.", Severity.Success);
+			await table.ReloadServerData();
+		}
+		catch (Exception ex)
+		{
+			Snackbar.Add($"Failed to add device: {ex.Message}", Severity.Error);
+		}
+	}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+<<<<<<< HEAD
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5be7bab (Add Dashboard, Add Auth)
+>>>>>>> a123fff (Add Dashboard, Add Auth)
+>>>>>>> 3d0106c (Add Dashboard, Add Auth)
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+>>>>>>> 0de0591 (Get Status, Update to .NET 10)
+>>>>>>> d4eca16 (Get Status, Update to .NET 10)
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+>>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+    private async Task Delete(Device device)
+    {
+        try
+        {
+            await using var dbContext = await DbContextFactory.CreateDbContextAsync();
+            var existing = await dbContext.Devices.FirstOrDefaultAsync(d => d.Name == device.Name);
+            if (existing is null)
+            {
+                Snackbar.Add("Device not found in DB.", Severity.Warning);
+                return;
+            }
+            dbContext.Devices.Remove(existing);
+            await dbContext.SaveChangesAsync();
+            Snackbar.Add($"Deleted {device.Name}.", Severity.Success);
+            await table.ReloadServerData();
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Failed to delete device: {ex.Message}", Severity.Error);
+        }
+    }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+<<<<<<< HEAD
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+=======
+=======
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+>>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
+	private async Task Edit(Device device)
+	{
+		var parameters = new DialogParameters
+		{
+			["Model"] = new DeviceEditModel
+			{
+				Name = device.Name,
+				Ip = device.Ip,
+<<<<<<< HEAD
+				Actions = device.Actions.Select(a => new DeviceActionEditModel { Action = a.Action, Command = a.Command, CommandArgs = a.CommandArgs, CommandType = a.CommandType }).ToList()
+=======
+				Actions = device.Actions.Select(a => new DeviceActionEditModel { Action = a.Action, Command = a.Command }).ToList()
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+			}
+		};
+		var dialog = await DialogService.ShowAsync<DeviceEditDialog>($"Edit {device.Name}", parameters);
+		var result = await dialog.Result;
+<<<<<<< HEAD
+		if (result is null || result.Canceled)
+		{
+			return;
+		}
+=======
+		if (result is null || result.Canceled == true) return;
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+
+		var model = (DeviceEditModel)result.Data!;
+		try
+		{
+			await using var dbContext = await DbContextFactory.CreateDbContextAsync();
+			var existing = await dbContext.Devices.FirstOrDefaultAsync(d => d.Name == device.Name);
+			if (existing is null)
+			{
+				Snackbar.Add("Device not found.", Severity.Error);
+				return;
+			}
+			dbContext.Devices.Remove(existing);
+			var replacement = new Device()
+			{
+				Name = model.Name,
+				Ip = model.Ip,
+<<<<<<< HEAD
+				Actions = model.Actions.Select(a => new DeviceAction(a.Action, a.CommandType, a.Command, a.CommandArgs)).ToList()
+=======
+				Actions = model.Actions.Select(a => new DeviceAction(a.Action, a.Command)).ToList()
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+			};
+			dbContext.Devices.Add(replacement);
+			await dbContext.SaveChangesAsync();
+
+			Snackbar.Add("Device updated.", Severity.Success);
+			await table.ReloadServerData();
+		}
+		catch (Exception ex)
+		{
+			Snackbar.Add($"Failed to update device: {ex.Message}", Severity.Error);
+		}
+	}
+
+	private async Task Delete(Device device)
+	{
+		try
+		{
+			await using var dbContext = await DbContextFactory.CreateDbContextAsync();
+			var existing = await dbContext.Devices.FirstOrDefaultAsync(d => d.Name == device.Name);
+			if (existing is null)
+			{
+				Snackbar.Add("Device not found in DB.", Severity.Warning);
+				return;
+			}
+
+			dbContext.Devices.Remove(existing);
+			await dbContext.SaveChangesAsync();
+			Snackbar.Add($"Deleted {device.Name}.", Severity.Success);
+			await table.ReloadServerData();
+		}
+		catch (Exception ex)
+		{
+			Snackbar.Add($"Failed to delete device: {ex.Message}", Severity.Error);
+		}
+	}
+
+	private class DeviceStatus
+	{
+		public bool Online { get; set; }
+		public int? UptimeSeconds { get; set; }
+		public bool Loading { get; set; } = true;
+	}
+<<<<<<< HEAD
+>>>>>>> 3548e6a (Get Status, Update to .NET 10)
+<<<<<<< HEAD
+}
+>>>>>>> 109a8f2 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+}
+>>>>>>> eeff7ac (Refactor and enhance device management system)
+<<<<<<< HEAD
+>>>>>>> 83b53c6 (Refactor and enhance device management system)
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+=======
+=======
+=======
+>>>>>>> 0efb677 (Add Dashboard, Add Auth)
+}
+>>>>>>> 5be7bab (Add Dashboard, Add Auth)
+>>>>>>> a123fff (Add Dashboard, Add Auth)
+>>>>>>> 3d0106c (Add Dashboard, Add Auth)
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a319cbf (Get Status, Update to .NET 10)
+>>>>>>> 0de0591 (Get Status, Update to .NET 10)
+>>>>>>> d4eca16 (Get Status, Update to .NET 10)
+<<<<<<< HEAD
+>>>>>>> 0df645d (Get Status, Update to .NET 10)
+=======
+>>>>>>> 5e15dfb (Refactor and enhance device management system)
+=======
+=======
+>>>>>>> 33bd328 (Add Dashboard, Add Auth)
+>>>>>>> 0e1ba11 (Add Dashboard, Add Auth)

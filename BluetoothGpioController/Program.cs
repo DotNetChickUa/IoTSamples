@@ -10,7 +10,7 @@ using BluetoothGpioController;
  * 6. pair <MAC>
  * 7. trust <MAC>
  * 8. connect <MAC>
- * 7. scp "linux-arm64/*.*" vladislav@raspberrypi-zero-2w.local:/home/vladislav/Projects/BluetoothGpioController
+ * 7. scp "linux-arm64/*.*" anastasia@raspberrypi-zero-2w.local:/home/anastasia/Projects/BluetoothGpioController
  */
 
 var builder = Host.CreateApplicationBuilder(args);
