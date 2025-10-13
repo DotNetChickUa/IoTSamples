@@ -1,13 +1,4 @@
 <Solution>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <Project Path="BluetoothGpioController.Client/BluetoothGpioController.Client.csproj">
-=======
-  <Folder Name="/Solution Items/" Id="8ec462fd-d22e-90a8-e5ce-7e832ba40c5d">
-=======
-=======
   <Folder Name="/BluetoothGpioController/">
     <Project Path="BluetoothGpioController/BluetoothGpioController.Client/BluetoothGpioController.Client.csproj">
       <Deploy />
@@ -19,39 +10,9 @@
       <Deploy />
     </Project>
   </Folder>
->>>>>>> 971c341 (Add IPCamera)
   <Folder Name="/Solution Items/">
->>>>>>> e7bbf9c (Remote Camera)
     <File Path="global.json" />
     <File Path="README.md" />
   </Folder>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <Project Path="BluetoothGpioController/BluetoothGpioController.Client/BluetoothGpioController.Client.csproj">
->>>>>>> a4c4662 (Rework client)
-    <Deploy />
-  </Project>
-<<<<<<< HEAD
-  <Project Path="BluetoothGpioController/BluetoothGpioController.csproj" />
-=======
-  <Project Path="BluetoothGpioController/BluetoothGpioController/BluetoothGpioController.csproj" />
-<<<<<<< HEAD
-  <Project Path="RemoteCamera/RemoteCamera.csproj" />
->>>>>>> e7bbf9c (Remote Camera)
-=======
->>>>>>> c522be4 (Remove remote camera)
-=======
->>>>>>> 971c341 (Add IPCamera)
-=======
   <Project Path="HomeManagement/HomeManagement.csproj" Id="ec61e7d2-d096-4ac6-86b7-8a177c983bfa" />
->>>>>>> be8e5f2 (Home Management)
-=======
-  <Folder Name="/Solution Items/" Id="8ec462fd-d22e-90a8-e5ce-7e832ba40c5d">
-    <File Path="README.md" />
-  </Folder>
-  <Project Path="BluetoothGpioController/BluetoothGpioController.Client/BluetoothGpioController.Client.csproj">
-    <Deploy />
-  </Project>
-  <Project Path="BluetoothGpioController/BluetoothGpioController/BluetoothGpioController.csproj" />
->>>>>>> 6fe7e3e (Control IN OUT)
 </Solution>

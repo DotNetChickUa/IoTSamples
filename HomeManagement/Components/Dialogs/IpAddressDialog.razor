@@ -3,96 +3,6 @@
 @inherits ComponentBase
 
 <MudPaper Class="pa-4" Elevation="1" Style="min-width:320px;">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
->>>>>>> eeff7ac (Refactor and enhance device management system)
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-=======
->>>>>>> eeff7ac (Refactor and enhance device management system)
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-<<<<<<< HEAD
-    <MudStack Spacing="2">
-        <MudText Typo="Typo.h6">Add Device</MudText>
-        <MudTextField @bind-Value="Address" Label="Address" Required="true" Immediate="true" ErrorText="@error" Error="@(!string.IsNullOrEmpty(error))" />
-        <MudStack Row="true" Justify="Justify.FlexEnd" Spacing="2">
-            <MudButton Variant="Variant.Text" Color="Color.Secondary" OnClick="Cancel">Cancel</MudButton>
-            <MudButton Variant="Variant.Filled" Color="Color.Primary" Disabled="string.IsNullOrWhiteSpace(Address)" OnClick="Save">Add</MudButton>
-=======
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-    <MudStack Spacing="2">
-        <MudText Typo="Typo.h6">Add Device by IP</MudText>
-        <MudTextField @bind-Value="Ip" Label="IP Address" Required="true" Immediate="true" />
-        <MudStack Row="true" Justify="Justify.FlexEnd" Spacing="2">
-            <MudButton Variant="Variant.Text" Color="Color.Secondary" OnClick="Cancel">Cancel</MudButton>
-            <MudButton Variant="Variant.Filled" Color="Color.Primary" Disabled="string.IsNullOrWhiteSpace(Ip)" OnClick="Save">Add</MudButton>
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-        </MudStack>
-    </MudStack>
-</MudPaper>
-
-@code {
-    [CascadingParameter] IMudDialogInstance DialogReference { get; set; } = default!;
-<<<<<<< HEAD
-    private string Address { get; set; } = string.Empty;
-	private string? error;
-
-    private async Task Save()
-    {
-        if (string.IsNullOrWhiteSpace(Address)) return;
-        var address = Address.Trim();
-        var networkDevice = await NetworkManager.GetDeviceInfoAsync(address, CancellationToken.None);
-        if (networkDevice is null)
-        {
-			error = "Could not reach device at this address.";
-            return;
-        }
-
-        DialogReference.Close(DialogResult.Ok(networkDevice));
-    }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
-=======
-    private string Ip { get; set; } = string.Empty;
-
-    private void Save()
-    {
-        if (string.IsNullOrWhiteSpace(Ip)) return;
-        DialogReference.Close(DialogResult.Ok(Ip.Trim()));
-    }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-=======
-<<<<<<< HEAD
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
 	<MudStack Spacing="2">
 		<MudText Typo="Typo.h6">Add Device</MudText>
 		<MudTextField @bind-Value="Address" Label="Address" Required="true" Immediate="true" ErrorText="@error" Error="@(!string.IsNullOrEmpty(error))" />
@@ -135,39 +45,6 @@
 
 		DialogReference.Close(DialogResult.Ok(networkDevice));
 	}
->>>>>>> 3548e6a (Get Status, Update to .NET 10)
 
 	private void Cancel() => DialogReference.Close(DialogResult.Cancel());
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-
-    private void Cancel() => DialogReference.Close(DialogResult.Cancel());
->>>>>>> eeff7ac (Refactor and enhance device management system)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
 }

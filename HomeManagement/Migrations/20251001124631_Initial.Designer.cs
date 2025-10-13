@@ -10,11 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HomeManagement.Migrations
 {
     [DbContext(typeof(HomeManagementDbContext))]
-<<<<<<<< HEAD:HomeManagement/Migrations/20250913130714_Initial.Designer.cs
-    [Migration("20250913130714_Initial")]
-========
     [Migration("20251001124631_Initial")]
->>>>>>>> 3548e6a (Get Status, Update to .NET 10):HomeManagement/Migrations/20251001124631_Initial.Designer.cs
     partial class Initial
     {
         /// <inheritdoc />
@@ -33,9 +29,6 @@ namespace HomeManagement.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("UptimeSeconds")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("Name");
 

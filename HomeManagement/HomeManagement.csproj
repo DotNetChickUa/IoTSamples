@@ -1,11 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
-<<<<<<< HEAD
 		<TargetFramework>net10.0</TargetFramework>
-=======
-		<TargetFramework>net9.0</TargetFramework>
->>>>>>> be8e5f2 (Home Management)
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 
@@ -19,170 +15,13 @@
 		<PackageReference Include="LiveStreamingServerNet.AdminPanelUI" Version="0.31.1" />
 		<PackageReference Include="LiveStreamingServerNet.Flv" Version="0.31.1" />
 		<PackageReference Include="LiveStreamingServerNet.Standalone" Version="0.31.1" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-		<PackageReference Include="MudBlazor" Version="8.11.0" />
-		<PackageReference Include="System.Device.Gpio" Version="4.0.1" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 3d0106c (Add Dashboard, Add Auth)
-=======
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
->>>>>>> d4eca16 (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-<<<<<<< HEAD
-=======
->>>>>>> 3d0106c (Add Dashboard, Add Auth)
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
->>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-		<PackageReference Include="MudBlazor" Version="8.11.0" />
-		<PackageReference Include="System.Device.Gpio" Version="4.0.1" />
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
-=======
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-<<<<<<< HEAD
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-=======
-=======
-		<PackageReference Include="LiveStreamingServerNet.StreamProcessor.AspNetCore" Version="0.31.1" />
->>>>>>> 0efb677 (Add Dashboard, Add Auth)
->>>>>>> 5be7bab (Add Dashboard, Add Auth)
->>>>>>> a123fff (Add Dashboard, Add Auth)
->>>>>>> 3d0106c (Add Dashboard, Add Auth)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
->>>>>>> d4eca16 (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
->>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
->>>>>>> fbc592b (Refactor and enhance device management system)
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.9">
-=======
 		<PackageReference Include="LiveStreamingServerNet.StreamProcessor.AspNetCore" Version="0.31.1" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0-rc.1.25451.107">
->>>>>>> 3548e6a (Get Status, Update to .NET 10)
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.0-rc.1.25451.107" />
 		<PackageReference Include="MudBlazor" Version="8.12.0" />
->>>>>>> 109a8f2 (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.9">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.9" />
-		<PackageReference Include="MudBlazor" Version="8.12.0" />
->>>>>>> eeff7ac (Refactor and enhance device management system)
->>>>>>> 83b53c6 (Refactor and enhance device management system)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
->>>>>>> 0df645d (Get Status, Update to .NET 10)
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
->>>>>>> 0df645d (Get Status, Update to .NET 10)
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-		<PackageReference Include="MudBlazor" Version="8.11.0" />
->>>>>>> be8e5f2 (Home Management)
-=======
->>>>>>> 540a000 (Refactor code structure and add GPIO control features)
 	</ItemGroup>
 
 </Project>

@@ -68,29 +68,7 @@
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="12.2.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> fbc592b (Refactor and enhance device management system)
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.110" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.90" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
-	  <PackageReference Include="DotNetChickUa.RtpLibrary">
-	    <Version>2.2.6</Version>
-	  </PackageReference>
-<<<<<<< HEAD
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
->>>>>>> 0df645d (Get Status, Update to .NET 10)
-=======
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.110" />
->>>>>>> 5e15dfb (Refactor and enhance device management system)
->>>>>>> fbc592b (Refactor and enhance device management system)
 	</ItemGroup>
 
 </Project>

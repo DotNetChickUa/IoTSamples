@@ -1,13 +1,7 @@
 {
   "sdk": {
-<<<<<<< HEAD
     "version": "10.0.0",
     "rollForward": "latestMinor",
     "allowPrerelease": true
-=======
-    "version": "9.0.100",
-	"rollForward": "latestMinor",
-	"allowPrerelease": true
->>>>>>> a4c4662 (Rework client)
   }
 }

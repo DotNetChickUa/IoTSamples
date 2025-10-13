@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-﻿using System.Diagnostics;
-using System.Text;
-using Plugin.BLE;
-using Plugin.BLE.Abstractions.Exceptions;
-
-namespace LampController.Client;
-
-public partial class MainPage : ContentPage
-{
-	int count = 0;
-
-	public MainPage()
-	{
-		InitializeComponent();
-	}
-
-=======
 ﻿using System.Collections.ObjectModel;
 using System.Text;
 using CommunityToolkit.Maui.Alerts;
@@ -36,62 +18,6 @@ public partial class MainPage : ContentPage
         "SHUTDOWN"
     };
 
-<<<<<<< HEAD
->>>>>>> 6fe7e3e (Control IN OUT)
-	private async void OnCounterClicked(object sender, EventArgs e)
-	{
-		var ble = CrossBluetoothLE.Current;
-		var adapter = CrossBluetoothLE.Current.Adapter;
-		ble.StateChanged += (s, e) =>
-		{
-			Debug.WriteLine($"The bluetooth state changed to {e.NewState}");
-		};
-		adapter.DeviceDiscovered += async (s, a) =>
-		{
-			try
-			{
-				await adapter.ConnectToDeviceAsync(a.Device);
-				var service = await a.Device.GetServiceAsync(Guid.Parse("12345678-1234-5678-1234-56789abcdef0"));
-				var characteristic = await service.GetCharacteristicAsync(Guid.Parse("12345678-1234-5678-1234-56789abcdef1"));
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<<< HEAD:BluetoothGpioController.Client/MainPage.xaml.cs
-<<<<<<< HEAD:BluetoothGpioController.Client/MainPage.xaml.cs
-				await characteristic.WriteAsync(Encoding.Default.GetBytes("19;1"));
-				await characteristic.WriteAsync(Encoding.Default.GetBytes("19;0"));
-=======
->>>>>>> 6fe7e3e (Control IN OUT)
-<<<<<<< HEAD
-				await characteristic.WriteAsync(Encoding.Default.GetBytes("19;OUTPUT;1"));
-				await characteristic.WriteAsync(Encoding.Default.GetBytes("19;OUTPUT;0"));
-=======
-				await characteristic.WriteAsync(Encoding.Default.GetBytes("10;OUTPUT;1;password"));
-				await characteristic.WriteAsync(Encoding.Default.GetBytes("10;INPUT;0;password"));
->>>>>>> 9e2922b (Add Password)
-<<<<<<< HEAD
-=======
-				await characteristic.WriteAsync(Encoding.Default.GetBytes("10;Output;1"));
-				await characteristic.WriteAsync(Encoding.Default.GetBytes("10;Input;0"));
->>>>>>> 8db33c4 (Update readme)
-=======
->>>>>>> 8b67ad0 (Add Password):BluetoothGpioController/BluetoothGpioController.Client/MainPage.xaml.cs
-========
-				await characteristic.WriteAsync(Encoding.Default.GetBytes("19;OUTPUT;1"));
-				await characteristic.WriteAsync(Encoding.Default.GetBytes("19;OUTPUT;0"));
->>>>>>>> 6fe7e3e (Control IN OUT):BluetoothGpioController/BluetoothGpioController.Client/MainPage.xaml.cs
->>>>>>> 6fe7e3e (Control IN OUT)
-			}
-			catch (Exception e)
-			{
-				// ... could not connect to device
-			}
-		};
-		await adapter.StartScanningForDevicesAsync();
-	}
-<<<<<<< HEAD
-=======
-=======
     public MainPage()
     {
         InitializeComponent();
@@ -151,6 +77,4 @@ public partial class MainPage : ContentPage
     {
         Preferences.Set("Password", e.NewTextValue);
     }
->>>>>>> 65b15a8 (Rework client)
->>>>>>> 6fe7e3e (Control IN OUT)
 }

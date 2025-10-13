@@ -51,30 +51,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-<<<<<<< HEAD:BluetoothGpioController.Client/BluetoothGpioController.Client.csproj
-<<<<<<< HEAD:BluetoothGpioController.Client/BluetoothGpioController.Client.csproj
-<<<<<<< HEAD:BluetoothGpioController.Client/BluetoothGpioController.Client.csproj
-<<<<<<< HEAD:BluetoothGpioController.Client/BluetoothGpioController.Client.csproj
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
-=======
-		<PackageReference Include="CommunityToolkit.Maui" Version="11.2.0" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.70" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.5" />
->>>>>>> a4c4662 (Rework client):BluetoothGpioController/BluetoothGpioController.Client/BluetoothGpioController.Client.csproj
-=======
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.70" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.5" />
->>>>>>> fec4208 (Add Reboot and Shutdown commands):BluetoothGpioController/BluetoothGpioController.Client/BluetoothGpioController.Client.csproj
-=======
 		<PackageReference Include="CommunityToolkit.Maui" Version="12.2.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.110" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" />
->>>>>>> fbc592b (Refactor and enhance device management system):BluetoothGpioController/BluetoothGpioController.Client/BluetoothGpioController.Client.csproj
-=======
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.50" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.3" />
->>>>>>> 6fe7e3e (Control IN OUT):BluetoothGpioController/BluetoothGpioController.Client/BluetoothGpioController.Client.csproj
 		<PackageReference Include="Plugin.BLE" Version="3.1.0" />
 	</ItemGroup>
 

@@ -1,43 +1,9 @@
 ﻿@page "/"
-<<<<<<< HEAD
-<<<<<<< HEAD
 @inject ISnackbar Snackbar
 @inject IDbContextFactory<HomeManagementDbContext> DbContextFactory
 @using Microsoft.EntityFrameworkCore
 @attribute [Authorize]
 @using System.Diagnostics
-<<<<<<< HEAD
-
-@code {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
-=======
-=======
-<<<<<<< HEAD
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-@code {
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
-=======
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 
 <PageTitle>Home</PageTitle>
 
@@ -126,118 +92,18 @@
 	private string? diskSpace;
 	private string? networkData;
 	private string? cpuInfo;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-@using System.Net.NetworkInformation
-
-<PageTitle>Home</PageTitle>
-
-<MudContainer MaxWidth="MaxWidth.False" Class="pa-4">
-	<MudGrid Spacing="3">
-		<MudItem xs="12" sm="6" md="3">
-			<MudCard Class="pa-4" Style="height:100%">
-				<MudStack Spacing="1">
-					<MudText Typo="Typo.subtitle2" Color="Color.Secondary">Total Devices</MudText>
-					<MudText Typo="Typo.h4">@totalDevices</MudText>
-				</MudStack>
-			</MudCard>
-		</MudItem>
-		<MudItem xs="12" sm="6" md="3">
-			<MudCard Class="pa-4" Style="height:100%">
-				<MudStack Spacing="1">
-					<MudText Typo="Typo.subtitle2" Color="Color.Secondary">Local IP</MudText>
-					<MudText Typo="Typo.h6">@localIp</MudText>
-				</MudStack>
-			</MudCard>
-		</MudItem>
-	</MudGrid>
-
-	<MudGrid Class="mt-4" Spacing="3">
-		<MudItem xs="12" md="6">
-			<MudPaper Class="pa-4" Elevation="1">
-				<MudText Typo="Typo.h6" Class="mb-2">Server Controls</MudText>
-				<MudStack Spacing="2">
-					<MudButton OnClick="Reboot" Color="Color.Error" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.RestartAlt">Reboot</MudButton>
-					<MudButton OnClick="Shutdown" Color="Color.Error" Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.PowerSettingsNew">Shutdown</MudButton>
-					<MudButton Href="/devices" Color="Color.Primary" Variant="Variant.Text" StartIcon="@Icons.Material.Filled.Devices">Manage Devices</MudButton>
-				</MudStack>
-			</MudPaper>
-		</MudItem>
-	</MudGrid>
-</MudContainer>
-
-@code {
-	private int totalDevices;
-	private string? localIp;
->>>>>>> 0efb677 (Add Dashboard, Add Auth)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
-=======
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 
 	protected override async Task OnInitializedAsync()
 	{
 		localIp = NetworkManager.GetLocalIp();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
-=======
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 		uptime = GetUptime();
 		diskSpace = GetDiskSpace();
 		networkData = GetNetworkData();
 		cpuInfo = GetCpuInfo();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> 0efb677 (Add Dashboard, Add Auth)
-=======
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 0efb677 (Add Dashboard, Add Auth)
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 		await using var db = await DbContextFactory.CreateDbContextAsync();
 		totalDevices = await db.Devices.CountAsync();
 	}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
-=======
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 	private string? GetUptime()
 	{
 		try
@@ -333,43 +199,12 @@
 		catch { return null; }
 	}
 
->>>>>>> 3548e6a (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> 0efb677 (Add Dashboard, Add Auth)
->>>>>>> 3d0106c (Add Dashboard, Add Auth)
-=======
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
->>>>>>> d4eca16 (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 0efb677 (Add Dashboard, Add Auth)
->>>>>>> 3d0106c (Add Dashboard, Add Auth)
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-@inject ISnackbar Snackbar
-
-@using System.Diagnostics
-
-@code {
->>>>>>> 540a000 (Refactor code structure and add GPIO control features)
 	private void Reboot()
 	{
 		try
 		{
-<<<<<<< HEAD
 			Process.Start("reboot");
 			Snackbar.Add("Rebooting...", Severity.Success);
-=======
-			Process.Start("sudo", "systemctl reboot");
->>>>>>> 540a000 (Refactor code structure and add GPIO control features)
 		}
 		catch (Exception e)
 		{
@@ -381,97 +216,15 @@
 	{
 		try
 		{
-<<<<<<< HEAD
-<<<<<<< HEAD
 			Process.Start("poweroff");
-=======
-			Process.Start("poweroff");			
->>>>>>> fbc592b (Refactor and enhance device management system)
 			Snackbar.Add("Shutting down...", Severity.Success);
-=======
-			Process.Start("sudo", "systemctl poweroff");
->>>>>>> 540a000 (Refactor code structure and add GPIO control features)
 		}
 		catch (Exception e)
 		{
 			Snackbar.Add(e.Message, Severity.Error);
 		}
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> eeff7ac (Refactor and enhance device management system)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-	private string? GetLocalIp()
-	{
-		var subnetBytes = NetworkManager.GetSubnets();
-		if (subnetBytes is null)
-		{
-			return null;
-		}
-
-
-		return $"{subnetBytes[0]}.{subnetBytes[1]}.{subnetBytes[2]}.{subnetBytes[3]}";
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
 	private string terminalCommand = string.Empty;
 	private string terminalOutput = string.Empty;
 
@@ -517,102 +270,5 @@
 		{
 			await RunTerminalCommand();
 		}
->>>>>>> 3548e6a (Get Status, Update to .NET 10)
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 109a8f2 (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
-	}
->>>>>>> eeff7ac (Refactor and enhance device management system)
-<<<<<<< HEAD
->>>>>>> 83b53c6 (Refactor and enhance device management system)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
-=======
->>>>>>> 109a8f2 (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
-	}
->>>>>>> eeff7ac (Refactor and enhance device management system)
->>>>>>> 83b53c6 (Refactor and enhance device management system)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-=======
-=======
-=======
->>>>>>> 0efb677 (Add Dashboard, Add Auth)
->>>>>>> 5be7bab (Add Dashboard, Add Auth)
->>>>>>> a123fff (Add Dashboard, Add Auth)
->>>>>>> 3d0106c (Add Dashboard, Add Auth)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
->>>>>>> d4eca16 (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 0df645d (Get Status, Update to .NET 10)
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
->>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
-=======
->>>>>>> 0df645d (Get Status, Update to .NET 10)
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 }
-=======
-}
-
-<PageTitle>Home</PageTitle>
-
-<MudText>@GetLocalIp()</MudText>
-<MudButton OnClick="Reboot" Color="Color.Error" Variant="Variant.Filled">Reboot</MudButton>
-<MudButton OnClick="Shutdown" Color="Color.Error" Variant="Variant.Filled">Shutdown</MudButton>
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-
-<PageTitle>Home</PageTitle>
-
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
->>>>>>> be8e5f2 (Home Management)
-=======
-
-}
-
-<PageTitle>Home</PageTitle>
-
-<MudButton OnClick="Reboot">Reboot</MudButton>
-<MudButton OnClick="Shutdown">Shutdown</MudButton>
->>>>>>> 540a000 (Refactor code structure and add GPIO control features)

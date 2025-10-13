@@ -14,41 +14,7 @@ namespace HomeManagement.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
->>>>>>> fbc592b (Refactor and enhance device management system)
             modelBuilder.HasAnnotation("ProductVersion", "10.0.0-rc.1.25451.107");
-=======
-            modelBuilder.HasAnnotation("ProductVersion", "9.0.9");
->>>>>>> eeff7ac (Refactor and enhance device management system)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-            modelBuilder.HasAnnotation("ProductVersion", "10.0.0-rc.1.25451.107");
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-<<<<<<< HEAD
-=======
-=======
-            modelBuilder.HasAnnotation("ProductVersion", "10.0.0-rc.1.25451.107");
->>>>>>> a319cbf (Get Status, Update to .NET 10)
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
 
             modelBuilder.Entity("HomeManagement.Device", b =>
                 {
@@ -61,12 +27,6 @@ namespace HomeManagement.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-<<<<<<< HEAD
-=======
-                    b.Property<int>("UptimeSeconds")
-                        .HasColumnType("INTEGER");
-
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
                     b.HasKey("Name");
 
                     b.ToTable("Devices", (string)null);
@@ -89,55 +49,12 @@ namespace HomeManagement.Migrations
                                 .IsRequired()
                                 .HasColumnType("TEXT");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
                             b1.Property<string>("CommandArgs")
                                 .HasColumnType("TEXT");
 
                             b1.Property<int>("CommandType")
                                 .HasColumnType("INTEGER");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
->>>>>>> eeff7ac (Refactor and enhance device management system)
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-=======
->>>>>>> eeff7ac (Refactor and enhance device management system)
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
                             b1.Property<string>("DeviceName")
                                 .IsRequired()
                                 .HasColumnType("TEXT");

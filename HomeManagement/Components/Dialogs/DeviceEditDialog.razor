@@ -7,10 +7,6 @@
     <MudForm @ref="_form">
         <MudTextField @bind-Value="Model.Name" Label="Name" Required="true" />
         <MudTextField @bind-Value="Model.Ip" Label="IP" Required="true" />
-<<<<<<< HEAD
-=======
-        <MudNumericField T="int" @bind-Value="Model.UptimeSeconds" Label="Uptime (sec)" Min="0" />
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 
         <MudDivider Class="my-2" />
         <MudText Typo="Typo.subtitle1">Actions</MudText>
@@ -18,64 +14,20 @@
         {
             <MudText Color="Color.Secondary" Typo="Typo.caption">No actions. Add one.</MudText>
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
         @foreach (var (action, index) in Model.Actions.Select((a,i) => (a,i)))
         {
             <MudPaper Class="pa-2 my-2" Elevation="0">
                 <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
                     <MudTextField @bind-Value="action.Action" Label="Action" Required="true" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
->>>>>>> fbc592b (Refactor and enhance device management system)
                     <MudTextField @bind-Value="action.CommandType" Label="Command Type" Required="true" />
                     <MudTextField @bind-Value="action.Command" Label="Command" Required="true" />
                     <MudTextField @bind-Value="action.CommandArgs" Label="Command Args" Required="false" />
-=======
-                    <MudTextField @bind-Value="action.Command" Label="Command" Required="true" />
->>>>>>> eeff7ac (Refactor and enhance device management system)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-                    <MudTextField @bind-Value="action.CommandType" Label="Command Type" Required="true" />
-                    <MudTextField @bind-Value="action.Command" Label="Command" Required="true" />
-                    <MudTextField @bind-Value="action.CommandArgs" Label="Command Args" Required="false" />
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
->>>>>>> fbc592b (Refactor and enhance device management system)
                     <MudIconButton Icon="@Icons.Material.Filled.Delete" Color="Color.Error" OnClick="() => RemoveAction(index)" />
                 </MudStack>
             </MudPaper>
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
         <MudButton Variant="Variant.Outlined" Color="Color.Primary" OnClick="AddAction" StartIcon="@Icons.Material.Filled.Add" Class="my-2">Add Action</MudButton>
 
         <MudStack Row="true" Spacing="2" Justify="Justify.FlexEnd" Class="mt-4">
@@ -88,10 +40,6 @@
 @code {
     [CascadingParameter] IMudDialogInstance DialogReference { get; set; } = default!;
     [Parameter] public DeviceEditModel Model { get; set; } = new();
-<<<<<<< HEAD
-=======
-    [Parameter] public bool IsEdit { get; set; }
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 
     private MudForm _form = default!;
     private bool _saving;
@@ -119,12 +67,8 @@
     private void RemoveAction(int index)
     {
         if (index >=0 && index < Model.Actions.Count)
-<<<<<<< HEAD
         {
             Model.Actions.RemoveAt(index);
         }
-=======
-            Model.Actions.RemoveAt(index);
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
     }
 }

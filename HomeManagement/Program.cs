@@ -1,16 +1,10 @@
-<<<<<<< HEAD
 using HomeManagement;
 using HomeManagement.Components;
-=======
-using HomeManagement.Components;
-using System.Net;
->>>>>>> be8e5f2 (Home Management)
 using LiveStreamingServerNet;
 using LiveStreamingServerNet.AdminPanelUI;
 using LiveStreamingServerNet.Flv.Installer;
 using LiveStreamingServerNet.Standalone;
 using LiveStreamingServerNet.Standalone.Installer;
-<<<<<<< HEAD
 using LiveStreamingServerNet.StreamProcessor.AspNetCore.Installer;
 using LiveStreamingServerNet.StreamProcessor.Installer;
 using Microsoft.AspNetCore.Authentication;
@@ -20,13 +14,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using MudBlazor.Services;
-<<<<<<< HEAD
 using System.Net;
 using System.Security.Claims;
-=======
-using HomeManagement;
-using Microsoft.EntityFrameworkCore;
->>>>>>> fbc592b (Refactor and enhance device management system)
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,74 +44,12 @@ builder.Services.AddCascadingAuthenticationState();
 
 builder.Services.AddLiveStreamingServer(
     new IPEndPoint(IPAddress.Any, 1935),
-<<<<<<< HEAD
-    options => options.AddStandaloneServices().AddFlv()
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
-=======
-=======
-<<<<<<< HEAD
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    options => options.AddStandaloneServices().AddFlv()
-=======
     options => options
     .AddAuthorizationHandler<StreamAuthorizationHandler>()
-=======
-    options => options
-    .AddAuthorizationHandler<DemoAuthorizationHandler>()
->>>>>>> 0efb677 (Add Dashboard, Add Auth)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-    options => options
-    .AddAuthorizationHandler<StreamAuthorizationHandler>()
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
     .AddStandaloneServices()
     .AddFlv()
     .AddStreamProcessor()
     .AddHlsTransmuxer()
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
->>>>>>> 3548e6a (Get Status, Update to .NET 10)
-=======
->>>>>>> 0efb677 (Add Dashboard, Add Auth)
->>>>>>> 3d0106c (Add Dashboard, Add Auth)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> 3548e6a (Get Status, Update to .NET 10)
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
->>>>>>> d4eca16 (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
 );
 builder.Services.AddHttpContextAccessor();
 
@@ -131,18 +58,10 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var dbContextFactory = scope.ServiceProvider.GetRequiredService<IDbContextFactory<HomeManagementDbContext>>();
-<<<<<<< HEAD
     await using var dbContext = await dbContextFactory.CreateDbContextAsync();
     await dbContext.Database.MigrateAsync();
 }
 
-=======
-    using var dbContext = dbContextFactory.CreateDbContext();
-    await dbContext.Database.MigrateAsync();
-}
-
-// Configure the HTTP request pipeline.
->>>>>>> fbc592b (Refactor and enhance device management system)
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
@@ -187,112 +106,6 @@ app.UseAdminPanelUI(new AdminPanelUIOptions
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
-<<<<<<< HEAD
-app.Run();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 3d0106c (Add Dashboard, Add Auth)
-=======
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
->>>>>>> d4eca16 (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-<<<<<<< HEAD
-=======
->>>>>>> 3d0106c (Add Dashboard, Add Auth)
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
->>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-app.Run();
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
-=======
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-=======
-=======
->>>>>>> 5be7bab (Add Dashboard, Add Auth)
-=======
-=======
->>>>>>> 0efb677 (Add Dashboard, Add Auth)
->>>>>>> a123fff (Add Dashboard, Add Auth)
->>>>>>> 3d0106c (Add Dashboard, Add Auth)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
-=======
->>>>>>> 0de0591 (Get Status, Update to .NET 10)
->>>>>>> d4eca16 (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
->>>>>>> 33bd328 (Add Dashboard, Add Auth)
->>>>>>> 0e1ba11 (Add Dashboard, Add Auth)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
->>>>>>> fbc592b (Refactor and enhance device management system)
 app.MapPost("api/account/login", async (
     HttpContext context,
     IOptions<StaticAuthOptions> authOptions,
@@ -326,10 +139,6 @@ app.MapPost("api/account/login", async (
 
     static string NormalizeReturnUrl(string? ru)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
         if (string.IsNullOrWhiteSpace(ru))
         {
             return "/";
@@ -340,13 +149,6 @@ app.MapPost("api/account/login", async (
             return ru;
         }
 
-<<<<<<< HEAD
-=======
-        if (string.IsNullOrWhiteSpace(ru)) return "/";
-        if (Uri.TryCreate(ru, UriKind.Relative, out _)) return ru;
->>>>>>> 0efb677 (Add Dashboard, Add Auth)
-=======
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
         return "/";
     }
 });
@@ -357,86 +159,4 @@ app.MapPost("api/account/logout", async (HttpContext ctx) =>
     return Results.Redirect("/");
 });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 3548e6a (Get Status, Update to .NET 10)
-=======
->>>>>>> 0efb677 (Add Dashboard, Add Auth)
 await app.RunAsync();
->>>>>>> 109a8f2 (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-=======
->>>>>>> 3548e6a (Get Status, Update to .NET 10)
-await app.RunAsync();
->>>>>>> 109a8f2 (Get Status, Update to .NET 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-await app.RunAsync();
->>>>>>> eeff7ac (Refactor and enhance device management system)
->>>>>>> 83b53c6 (Refactor and enhance device management system)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
->>>>>>> 0df645d (Get Status, Update to .NET 10)
-=======
->>>>>>> 5e15dfb (Refactor and enhance device management system)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a319cbf (Get Status, Update to .NET 10)
->>>>>>> 0df645d (Get Status, Update to .NET 10)
->>>>>>> 5e49c9a (Get Status, Update to .NET 10)
-=======
->>>>>>> fbc592b (Refactor and enhance device management system)
-=======
-using MudBlazor.Services;
-
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddMudServices();
-// Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
-
-builder.Services.AddLiveStreamingServer(
-    new IPEndPoint(IPAddress.Any, 1935),
-    options => options.AddStandaloneServices().AddFlv()
-);
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
-
-app.UseHttpsRedirection();
-
-app.UseAntiforgery();
-
-app.MapStaticAssets();
-app.UseHttpFlv();
-app.MapStandaloneServerApiEndPoints();
-app.UseAdminPanelUI(new AdminPanelUIOptions { BasePath = "/ip-cameras", HasHttpFlvPreview = true, HasHlsPreview = true });
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
-
-app.Run();
->>>>>>> be8e5f2 (Home Management)
